@@ -14,6 +14,6 @@ movieList.addEventListener("click", event => {
   let movieItem = event.target.closest("li");
 
   if (movieItem) {
-    window.location.href = `detail.html?movieId=${li.id}`;
+    window.location.href = `detail.html?movieId=${movieItem.id}`;
   }
 });

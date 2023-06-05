@@ -1,4 +1,4 @@
-import { getPopularMovieList, getSearchMovieList } from "../apis/movie.js";
+import { getPopularMovieList, getSearchMovieList, getDetailMovie } from "./apis/movie.js";
 
 export const drawMovieList = movieList => {
   const movieListElement = document.querySelector(".movie-list");
