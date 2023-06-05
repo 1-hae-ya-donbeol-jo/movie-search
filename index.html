@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/ui.css" />
     <script src="./src/main.js" type="module" defer></script>
+    <script src="./src/junho.js" type="module" defer></script>
 
     <title>영화검색</title>
   </head>
@@ -21,6 +22,28 @@
         <input class="search-box" />
         <button>검색</button>
       </form>
+
+      <div class="menu-icon">
+        <input type="checkbox" id="menuIcon" />
+        <label for="menuIcon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <select name="" id="menuSort">
+          <optgroup label="정렬">
+            <option value="name">이름순</option>
+            <option value="name">별점순</option>
+            <option value="name">최근 개봉순</option>
+          </optgroup>
+          <optgroup label="언어">
+            <option value="name">한국어</option>
+            <option value="name">영어</option>
+            <option value="name">일본어</option>
+            <option value="name">중국어</option>
+          </optgroup>
+        </select>
+      </div>
     </header>
 
     <main>
