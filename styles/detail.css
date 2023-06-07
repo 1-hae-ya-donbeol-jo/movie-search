@@ -1,8 +1,12 @@
 @import "reset.css";
+@import "colors.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   font-family: "Roboto";
   font-style: normal;
+}
+html {
+  font-size: 6.25%; /* 6.25% of the base size of : 1rem = 1px */
 }
 
 header {
@@ -21,14 +25,73 @@ header figure {
 }
 
 .movie-detail {
+  /* background-color: green; */
+
   display: flex;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 1280px;
 
-  margin-top: 3rem;
+  margin: 0 auto;
+
+  /* 나중에 삭제하세요! */
+  margin-bottom: 200px;
+  background-color: green;
 }
 
-.detail-movie-poster {
+.movie-detail img {
+  background-color: red;
+
+  flex-shrink: 1;
+
+  display: flex;
+  width: 100%;
+  max-width: 160rem;
+  height: 100%;
+  /* flex-shrink라는 옵션을 검색해보세여 */
+  /* 기본값이 auto 입니다 */
+}
+
+.movie-detail figure {
+  background-color: blue;
+
+  width: 70%;
+
+  padding: 20rem;
+  font-size: 16rem;
+
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 1rem; */
+}
+
+.detail-movie-main {
+  display: flex;
+}
+/* 프로젝트 내에서 모두 함께 사용하는 색상은 변수로 지정후 사용하는게 일반적입니다. */
+
+.detail-movie-status {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-red);
+  border-radius: 30rem;
+  color: var(--white);
+  font-size: 12rem;
+  padding: 3rem 5rem;
+}
+
+.detail-movie-box {
+}
+
+.detail-movie-title {
+  font-size: 24rem;
+  margin-right: 8rem;
+}
+.detail-movie-overview {
+  font-size: 16rem;
+}
+/* .detail-movie-poster {
   width: auto;
   height: auto;
 
@@ -37,22 +100,7 @@ header figure {
   border-radius: 1rem;
 }
 
-.detail-movie-box {
-  width: 55%;
 
-  margin-left: 3rem;
-
-  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
-
-  /* border-top: 1px solid black; */
-  border-bottom: 1px solid black;
-  /* border-radius: 1rem; */
-}
-
-.detail-movie-main {
-  display: flex;
-  /* flex-direction: row; */
-}
 
 .detail-movie-title {
   margin-top: 7rem;
@@ -103,4 +151,4 @@ header figure {
   margin-right: 10rem;
 }
 
-/* "printWidth": 100, */
+"printWidth": 100, */
