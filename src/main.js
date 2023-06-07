@@ -1,10 +1,19 @@
-import { loadMovie, searchMovie } from "./movie.js";
+import { renderPopularMovie, renderSearchMovie } from "./movie.js";
 
-loadMovie();
+renderPopularMovie();
 
 const searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", event => {
   event.preventDefault();
 
-  searchMovie();
+  renderSearchMovie();
+});
+
+const movieList = document.querySelector(".movie-list");
+movieList.addEventListener("click", event => {
+  let movieItem = event.target.closest("li");
+
+  if (movieItem) {
+    window.location.href = `detail.html?movieId=${movieItem.id}`;
+  }
 });
