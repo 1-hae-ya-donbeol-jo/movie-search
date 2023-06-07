@@ -33,7 +33,7 @@ export const getDetailMovie = async movieId => {
 };
 
 export const getSimilarMovie = async movieId => {
-  const response = await fetchMovie(`movie/${movieId}/similar`)
-  
+  const { results: response } = await fetchMovie(`movie/${movieId}/similar`);
+
   return response;
 };

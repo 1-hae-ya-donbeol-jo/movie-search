@@ -1,5 +1,6 @@
 import { renderPopularMovie, renderSearchMovie } from "./movie.js";
 import { nextSlide } from "./utils/slider.js";
+import { drawSortMovieList } from "./sort.js";
 
 renderPopularMovie();
 
@@ -17,4 +18,9 @@ movieList.addEventListener("click", event => {
   if (movieItem) {
     window.location.href = `detail.html?movieId=${movieItem.id}`;
   }
+});
+
+const sortMenu = document.querySelector("#sortOpt");
+sortMenu.addEventListener("change", () => {
+  drawSortMovieList();
 });
