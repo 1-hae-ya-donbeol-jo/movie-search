@@ -4,6 +4,11 @@
   font-style: normal;
 }
 
+/* 추후 반응형 구현 시, 사용할 수 있도록 rem 값 이용 */
+html {
+  font-size: 6.25%; /* 6.25% of the base size of : 1rem = 1px */
+}
+
 header {
   display: flex;
   align-items: center;
@@ -20,66 +25,89 @@ header figure {
 .movie-detail {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
 }
 
 .detail-movie-poster {
-  width: auto;
-  height: auto;
-  margin-right: 5rem;
-  border-radius: 1rem;
+  max-width: 161rem;
+  max-height: 233rem;
+
+  border-radius: 8rem;
 }
 
 .detail-movie-box {
-  width: 55%;
-  margin-left: 3rem;
+  width: 70%;
+  padding: 15rem;
+  margin: 0rem 20rem;
+  font-size: 16rem;
   border-bottom: 1px solid black;
 }
 
 .detail-movie-main {
   display: flex;
+  align-items: center;
 }
 
 .detail-movie-title {
-  margin-top: 7rem;
-  margin-left: 7rem;
-  font-size: 3.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: left;
+  height: 29rem;
+  margin-right: 8rem;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24rem;
+  line-height: 29rem;
+  text-align: center;
+  color: var(--color_black);
 }
 
-.detail-movie-adult {
-  margin-top: 7rem;
-  margin-left: 5rem;
-  padding-top: 1.5rem;
-  font-size: 2rem;
+.detail-movie-status-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50rem;
+  height: 21rem;
+
+  background-color: var(--color_red);
+  border-radius: 30rem;
 }
 
 .detail-movie-status {
-  margin-top: 7rem;
-  margin-left: 2rem;
-  padding-top: 1.5rem;
-  font-size: 2rem;
+  height: 15rem;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11rem;
+  line-height: 15rem;
+  text-align: center;
+  color: var(--color_white);
 }
 
 .detail-movie-overview {
-  margin: 5rem 7rem;
-  width: 90rem;
-  font-size: 2rem;
-  line-height: 2.2rem;
+  font-size: 14rem;
+  margin: 7rem;
+
+  width: 700rem;
+  font-size: 16rem;
+  line-height: 18rem;
+  color: var(--color_gray6);
 }
 
 .detail-movie-info {
   display: flex;
-  margin: 5rem 7rem;
-  font-size: calc(0.2rem + 1vw);
-  text-align: left;
-  opacity: 0.5;
-  line-height: 4rem;
+  margin: 5rem;
+  padding-top: 13rem;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14rem;
+  line-height: 17rem;
+  color: var(--color_gray5);
 }
 
 .detail-movie-left {
-  margin-right: 10rem;
+  margin-right: 50rem;
 }
+
+/* 여기까지 영화 상세 페이지 기본 화면입니다. */
