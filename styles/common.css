@@ -4,3 +4,8 @@
 
   margin: 0 auto;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+}
