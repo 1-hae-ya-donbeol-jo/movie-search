@@ -14,6 +14,12 @@ export const getPopularMovieList = async () => {
   return movieList;
 };
 
+export const getNowPlayingMovie = async () => {
+  const { results: nowPlayingMovieList } = await fetchMovie("movie/now_playing");
+
+  return nowPlayingMovieList;
+};
+
 export const getSearchMovieList = async query => {
   const { results: searchMovieList } = await fetchMovie(`search/movie?query=${query}`);
 
