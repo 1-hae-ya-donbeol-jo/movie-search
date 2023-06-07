@@ -17,24 +17,46 @@
       <figure>
         <img src="assets/logo.png" width="100" alt="햇님 로고" />
       </figure>
-
-      <form class="search-form">
-        <input class="search-box" />
-        <button>검색</button>
-      </form>
-
-      <div id="sortMenu">
-        <input type="radio" class="radio-btn" id="radio1" name="radiobutton" checked="false" />
-        <label for="radio1">인기순</label>
-        <input type="radio" class="radio-btn" id="radio2" name="radiobutton" />
-        <label for="radio2">이름순</label>
-        <input type="radio" class="radio-btn" id="radio3" name="radiobutton" />
-        <label for="radio3">개봉순</label>
-      </div>
     </header>
 
     <main>
-      <ul class="movie-list"></ul>
+      <div class="movie-visual"></div>
+      <div class="movie-slide">
+        <ul class="movie-list"></ul>
+      </div>
     </main>
+
+    <form class="search-form">
+      <input class="search-box" placeholder="movie" />
+      <button></button>
+    </form>
+
+    <div>
+      <div>
+        <h1>상영중 top 20</h1>
+        <div id="sortMenu">
+          <!-- 버튼 UI 변경 -->
+          <input type="radio" class="radio-btn" id="radio1" name="radiobutton" checked="false" />
+          <label for="radio1">평점순</label>
+          <input type="radio" class="radio-btn" id="radio2" name="radiobutton" />
+          <label for="radio2">이름순</label>
+          <input type="radio" class="radio-btn" id="radio3" name="radiobutton" />
+          <label for="radio3">개봉순</label>
+        </div>
+      </div>
+      <ul 그리드></ul>
+      <button>더보기</button>
+    </con채ㅜ>
+    <div 카테고리>
+      <ul>
+        액션
+      </ul>
+      <ul>
+        코미디
+      </ul>
+      <ul>
+        스릴러
+      </ul>
+    </div>
   </body>
 </html>

@@ -8,10 +8,16 @@ export const drawMovieList = movieList => {
 
     return (newMovieList += `
           <li class="movie-item" id=${id}>
-              <img class="movie-poster" src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="${title} 포스터" />
+              <div class="item-poster">
+                <div class="poster-movie">
+                  <img src="https://image.tmdb.org/t/p/w200/${poster_path}" alt="${title}" />
+                  <span class="movie-rating">Rating : ${vote_average}</span>
+                </div>
+                <div class="poster-info">
+                </div>
+              </div>
               <h2 class="movie-title">${title}</h2>
-              <p class="movie-desc">${overview}</p>
-              <p class="movie-rating">Rating : ${vote_average}</p>
+              <p class="movie-desc" style="display: none;">${overview}</p>
           </li>
         `);
   }, "");

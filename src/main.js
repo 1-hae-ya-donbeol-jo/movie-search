@@ -1,4 +1,5 @@
 import { renderPopularMovie, renderSearchMovie } from "./movie.js";
+import { nextSlide } from "./utils/slider.js";
 
 renderPopularMovie();
 

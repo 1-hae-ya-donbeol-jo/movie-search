@@ -15,7 +15,7 @@ export const getPopularMovieList = async () => {
 };
 
 export const getSearchMovieList = async query => {
-  const { results: searchMovieList } = await fetchMovie(`search?query=${query}`);
+  const { results: searchMovieList } = await fetchMovie(`search/movie?query=${query}`);
 
   return searchMovieList;
 };
