@@ -1,0 +1,83 @@
+/*
+ * File       : rwd-ui.css
+ * Author     : 내일배움캠프 6기 1조
+ * Dependency : css/reset.css
+ * Dependency : css/ui.css
+ *
+ *
+ * SUMMARY:
+ * 01) 1024px 대형 (PC, 노트북, Surface Hub) 1024 x 640, 1366 x 768, 1920 x 1080
+ * 02) 768px  중형 (태블릿) 960 x 540
+ * 03) 375px  소형 (모바일) 320x569, 360x640, 480x854
+ */
+
+
+ /* **************************************** *
+ * 01) 1024px
+ * **************************************** */
+
+
+ /* **************************************** *
+ * 02) 768px
+ * **************************************** */
+
+
+ /* **************************************** *
+ * 03) 375px
+ * **************************************** */
+ @media(max-width: 375px){
+    /* global */
+    .global-inner{
+        padding: 0 16px;
+    }
+    .guest-section .btn-global-kr{
+        font-size: 14px;
+    }
+
+    /* header */
+    .gnb{
+        display: none;
+    }
+    .header-utill .utill-item.mobile{
+        display: inline-block;
+      }
+    .header-utill .utill-item{
+        display: none;
+    }
+
+    /* footer */
+    .footer{
+        height: 495px;
+        padding: 40px 0 28px 0;
+    }
+    .footer .global-inner{
+        height: 100%;
+    }
+    .footer-top{
+        height: 100%;
+        flex-direction: column;
+    }
+
+    /* 후기 */
+    .card-btn{
+        display: none;
+    }
+    .guest-section .card{
+        padding: 22px 8px;
+    }
+    .guest-section .user-tit{
+        font-size: 16px;
+    }
+    .guest-section .user-comment{
+        font-size: 16px;
+    }
+    .guest-section textarea{
+        height: 188px;
+        padding: 20px 25px 56px 25px;
+    }
+    .guest-section .btn-global-kr{
+        top: -60px;
+        right: 18px;
+    }
+
+}
