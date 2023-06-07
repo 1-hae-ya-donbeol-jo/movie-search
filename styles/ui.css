@@ -207,10 +207,12 @@ textarea {
   justify-content: end;
   width: 20%;
 }
-.header-utill a{
+.header-utill .utill-item{
   margin-left: 14px;
 }
-
+.header-utill .utill-item.mobile{
+  display: none;
+}
 /* gnb */
 
 .gnb-inner{
