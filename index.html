@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/common.css" />
     <script src="./src/main.js" type="module" defer></script>
-    <script src="./src/sort.js" type="module" defer></script>
 
     <title>영화검색</title>
   </head>
@@ -26,23 +25,26 @@
     <main>
       <div class="movie-visual"></div>
       <div class="movie-slide">
-        <button></button>
-        <button></button>
         <ul class="movie-list"></ul>
       </div>
+      <figure class="moveSilde">
+        <button value="prev">이전</button>
+        <button value="next">다음</button>
+      </figure>
     </main>
 
-    <form class="search-form">
-      <input class="search-box" placeholder="movie" />
-      <button></button>
-    </form>
-
     <container class="now-movie container">
+      <div class="align-center">
+        <form class="search-form">
+          <input class="search-box" placeholder="movie" />
+          <button></button>
+        </form>
+      </div>
       <h3 class="section-title">현재 상영 중</h3>
       <select name="sort-option" id="sortOpt">
-        <option value="vote">평점순</option>
-        <option value="title">이름순</option>
         <option value="day">개봉순</option>
+        <option value="title">이름순</option>
+        <option value="vote">평점순</option>
       </select>
       <ul class="now-movie-list grid"></ul>
       <button>더보기</button>
