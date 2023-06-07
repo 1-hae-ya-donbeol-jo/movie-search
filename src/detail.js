@@ -1,10 +1,12 @@
 import { getDetailMovie } from "./apis/movie.js";
+import { getSimilarMovie } from "./apis/movie.js";
 
 const searchParams = new URLSearchParams(location.search);
 const movieId = searchParams.get("movieId");
 
 const renderDetail = async () => {
   const movieDetail = await getDetailMovie(movieId);
+  console.log(movieDetail);
 
   // genres, production_countries, production_companies 배열 정보 가져오는 데에 map 함수 사용
   const genres = movieDetail.genres.map(genre => `${genre.name}`).join(", ");
@@ -58,3 +60,30 @@ const mainLogo = document.querySelector(".main-logo");
 mainLogo.addEventListener("click", event => {
   window.location.href = "./index.html";
 });
+
+
+// 관련 영화 추천 [김채현]
+// similar api 가져오기
+const renderSimilar = async () => {
+  const similarMovie = await getSimilarMovie(movieId);
+  console.log(similarMovie);
+  // {page: 1, results: [{...}, {...}]}
+
+  const results = similarMovie.results;
+
+  const movieSimilarElement = document.getElementsByClassName("similar-movies")[0];
+  // console.log(movieSimilarElement[0]) // HTMLCollection[];
+  // console.dir(movieSimilarElement[0]);
+  // movieSimilarElement.innerHTML = `
+  // <img src="https://image.tmdb.org/t/p/w500/${results[0].poster_path}"/>
+  // <div>${results[0].title}</div>`
+
+  // 관련영화 그려주기
+  results.forEach(result => {
+    movieSimilarElement.innerHTML += `
+  <img class="similar-image" src="https://image.tmdb.org/t/p/w500/${result.poster_path}"/>
+  <div class="similiar-title">${result.title}</div>`;
+  });
+};
+
+renderSimilar();
