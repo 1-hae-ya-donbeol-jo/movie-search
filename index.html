@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/ui.css" />
+    <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/common.css" />
     <script src="./src/main.js" type="module" defer></script>
     <script src="./src/sort.js" type="module" defer></script>
 
@@ -15,6 +17,7 @@
   <body>
     <header>
       <figure>
+        <h1 style="display: none">영화 검색 사이트</h1>
         <img src="assets/logo.png" width="100" alt="햇님 로고" />
       </figure>
     </header>
@@ -22,6 +25,8 @@
     <main>
       <div class="movie-visual"></div>
       <div class="movie-slide">
+        <button></button>
+        <button></button>
         <ul class="movie-list"></ul>
       </div>
     </main>
@@ -31,32 +36,23 @@
       <button></button>
     </form>
 
-    <div>
-      <div>
-        <h1>상영중 top 20</h1>
-        <div id="sortMenu">
-          <!-- 버튼 UI 변경 -->
-          <input type="radio" class="radio-btn" id="radio1" name="radiobutton" checked="false" />
-          <label for="radio1">평점순</label>
-          <input type="radio" class="radio-btn" id="radio2" name="radiobutton" />
-          <label for="radio2">이름순</label>
-          <input type="radio" class="radio-btn" id="radio3" name="radiobutton" />
-          <label for="radio3">개봉순</label>
-        </div>
-      </div>
-      <ul 그리드></ul>
+    <container class="now-movie container">
+      <h3 class="section-title">현재 상영 중</h3>
+      <select name="sort-option" id="sortOpt">
+        <option value="vote">평점순</option>
+        <option value="title">이름순</option>
+        <option value="day">개봉순</option>
+      </select>
+      <ul class="now-movie-list grid"></ul>
       <button>더보기</button>
-    </con채ㅜ>
+    </container>
     <div 카테고리>
-      <ul>
-        액션
-      </ul>
-      <ul>
-        코미디
-      </ul>
-      <ul>
-        스릴러
-      </ul>
+      <h3 class="section-title">액션</h3>
+      <ul></ul>
+      <h3 class="section-title">코미디</h3>
+      <ul></ul>
+      <h3 class="section-title">스릴러</h3>
+      <ul></ul>
     </div>
   </body>
 </html>

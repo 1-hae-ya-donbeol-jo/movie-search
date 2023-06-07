@@ -1,0 +1,106 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 200px;
+
+  padding: 0 2rem;
+}
+
+header figure {
+  cursor: pointer;
+}
+
+.movie-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 3rem;
+}
+
+.detail-movie-poster {
+  width: auto;
+  height: auto;
+
+  margin-right: 5rem;
+
+  border-radius: 1rem;
+}
+
+.detail-movie-box {
+  width: 55%;
+
+  margin-left: 3rem;
+
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+
+  /* border-top: 1px solid black; */
+  border-bottom: 1px solid black;
+  /* border-radius: 1rem; */
+}
+
+.detail-movie-main {
+  display: flex;
+  /* flex-direction: row; */
+}
+
+.detail-movie-title {
+  margin-top: 7rem;
+  margin-left: 7rem;
+
+  font-size: 3.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.detail-movie-adult {
+  margin-top: 7rem;
+  margin-left: 5rem;
+  padding-top: 1.5rem;
+
+  font-size: 2rem;
+}
+
+.detail-movie-status {
+  margin-top: 7rem;
+  margin-left: 2rem;
+  padding-top: 1.5rem;
+
+  font-size: 2rem;
+}
+
+.detail-movie-overview {
+  margin: 5rem 7rem;
+
+  width: 90rem;
+  font-size: 2rem;
+  line-height: 2.2rem;
+}
+
+.detail-movie-info {
+  display: flex;
+
+  margin: 5rem 7rem;
+
+  font-size: calc(0.2rem + 1vw);
+  text-align: left;
+  opacity: 0.5;
+  line-height: 4rem;
+}
+
+.detail-movie-left {
+  margin-right: 10rem;
+}
+
+/* "printWidth": 100, */
