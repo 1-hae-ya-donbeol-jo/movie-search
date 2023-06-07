@@ -1,12 +1,7 @@
 import { getNowPlayingMovie } from "./apis/movie.js";
-import { drawNowMovieList } from "./movie.js";
+import { drawMovieList } from "./movie.js";
 
-const sortMenu = document.querySelector("#sortOpt");
-sortMenu.addEventListener("change", () => {
-  drawSortMovieList();
-});
-
-const drawSortMovieList = async () => {
+export const drawSortMovieList = async () => {
   const movieList = await getNowPlayingMovie();
   const sortOpt = document.querySelector("#sortOpt");
 
@@ -22,5 +17,5 @@ const drawSortMovieList = async () => {
       break;
   }
 
-  drawNowMovieList(movieList);
+  drawMovieList(movieList, ".now-movie-list");
 };

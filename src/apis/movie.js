@@ -31,3 +31,9 @@ export const getDetailMovie = async movieId => {
 
   return response;
 };
+
+export const getSimilarMovie = async movieId => {
+  const { results: response } = await fetchMovie(`movie/${movieId}/similar`);
+
+  return response;
+};
