@@ -12,8 +12,11 @@ searchForm.addEventListener("submit", event => {
 const movieList = document.querySelector(".movie-list");
 movieList.addEventListener("click", event => {
   let movieItem = event.target.closest("li");
+  console.log("🚀 ~ file: main.js:15 ~ movieItem:", movieItem);
 
   if (movieItem) {
     window.location.href = `detail.html?movieId=${movieItem.id}`;
   }
 });
+
+console.log(movieList.children);

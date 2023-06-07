@@ -26,8 +26,9 @@ const renderDetail = async () => {
   <figure class="detail-movie-box">
     <section class="detail-movie-main">
         <h2 class="detail-movie-title">${movieDetail.title}</h2>
-        <p class="detail-movie-adult">${movieDetail.adult}</p>
+        <span class="detail-movie-status-box">
         <p class="detail-movie-status">${movieDetail.status}</p>
+        </span>
     </section>
 
     <p class="detail-movie-overview">${movieDetail.overview}</p>
@@ -48,12 +49,13 @@ const renderDetail = async () => {
       </div>
     </section>
   </figure>
-  
   `;
+  // adult 정보 삭제함
 };
 
 renderDetail();
 
+// 햇님 로고 클릭 -> 메인 페이지로 이동
 const mainLogo = document.querySelector(".main-logo");
 mainLogo.addEventListener("click", event => {
   window.location.href = "./index.html";
