@@ -24,29 +24,29 @@ const renderDetail = async () => {
   <img class="detail-movie-poster" src="https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}" alt="${movieDetail.title} 포스터"/> 
 
   <figure class="detail-movie-box">
-  <section class="detail-movie-main">
-  <h2 class="detail-movie-title">${movieDetail.title}</h2>
-  <p class="detail-movie-adult">${movieDetail.adult}</p>
-  <p class="detail-movie-status">${movieDetail.status}</p>
-  </section>
+    <section class="detail-movie-main">
+        <h2 class="detail-movie-title">${movieDetail.title}</h2>
+        <p class="detail-movie-adult">${movieDetail.adult}</p>
+        <p class="detail-movie-status">${movieDetail.status}</p>
+    </section>
 
-  <h2 class="detail-movie-overview">${movieDetail.overview}</h2>
+    <p class="detail-movie-overview">${movieDetail.overview}</p>
 
-  <section class="detail-movie-info">
-  <div class="detail-movie-left">
-  <p> 개봉일자: ${movieDetail.release_date}</p>
-  <p> 장르: ${genres}</p>
-  <p> 러닝타임: ${movieDetail.runtime}분</p>
-  <p> 수익: ${revenue}달러</p>
-  </div>
+    <section class="detail-movie-info">
+      <div class="detail-movie-left">
+        <p> 개봉일자: ${movieDetail.release_date}</p>
+        <p> 장르: ${genres}</p>
+        <p> 러닝타임: ${movieDetail.runtime}분</p>
+        <p> 수익: ${revenue}달러</p>
+      </div>
 
-  <div class="detail-movie-right">
-  <p> 평점: ★ ${movieDetail.vote_average}점</p>
-  <p> 투표 수: ${voteCount}개</p>
-  <p> 국가: ${productionCountries}</p>
-  <p> 제작사: ${productionCompanies}</p>
-  </div>
-  </section>
+      <div class="detail-movie-right">
+        <p> 평점: ★ ${movieDetail.vote_average}점</p>
+        <p> 투표 수: ${voteCount}개</p>
+        <p> 국가: ${productionCountries}</p>
+        <p> 제작사: ${productionCompanies}</p>
+      </div>
+    </section>
   </figure>
   
   `;
