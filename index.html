@@ -11,46 +11,49 @@
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/common.css" />
     <script src="./src/main.js" type="module" defer></script>
-    <script src="./src/junho.js" type="module" defer></script>
+    <script src="./src/sort.js" type="module" defer></script>
 
     <title>영화검색</title>
   </head>
   <body>
     <header>
       <figure>
+        <h1 style="display: none">영화 검색 사이트</h1>
         <img src="assets/logo.png" width="100" alt="햇님 로고" />
       </figure>
-
-      <form class="search-form">
-        <input class="search-box" />
-        <button>검색</button>
-      </form>
-
-      <div class="menu-icon">
-        <input type="checkbox" id="menuIcon" />
-        <label for="menuIcon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <select name="" id="menuSort">
-          <optgroup label="정렬">
-            <option value="name">이름순</option>
-            <option value="name">별점순</option>
-            <option value="name">최근 개봉순</option>
-          </optgroup>
-          <optgroup label="언어">
-            <option value="name">한국어</option>
-            <option value="name">영어</option>
-            <option value="name">일본어</option>
-            <option value="name">중국어</option>
-          </optgroup>
-        </select>
-      </div>
     </header>
 
     <main>
-      <ul class="movie-list"></ul>
+      <div class="movie-visual"></div>
+      <div class="movie-slide">
+        <button></button>
+        <button></button>
+        <ul class="movie-list"></ul>
+      </div>
     </main>
+
+    <form class="search-form">
+      <input class="search-box" placeholder="movie" />
+      <button></button>
+    </form>
+
+    <container class="now-movie container">
+      <h3 class="section-title">현재 상영 중</h3>
+      <select name="sort-option" id="sortOpt">
+        <option value="vote">평점순</option>
+        <option value="title">이름순</option>
+        <option value="day">개봉순</option>
+      </select>
+      <ul class="now-movie-list grid"></ul>
+      <button>더보기</button>
+    </container>
+    <div 카테고리>
+      <h3 class="section-title">액션</h3>
+      <ul></ul>
+      <h3 class="section-title">코미디</h3>
+      <ul></ul>
+      <h3 class="section-title">스릴러</h3>
+      <ul></ul>
+    </div>
   </body>
 </html>
