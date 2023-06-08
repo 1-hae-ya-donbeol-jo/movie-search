@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./styles/rwd-ui.css" />
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/common.css" />
+
+    <script src="./src/utils/slider.js" type="module" defer></script>
     <script src="./src/main.js" type="module" defer></script>
 
     <title>영화검색</title>
@@ -41,11 +43,11 @@
     </header>
 
     <div class="movie-visual"></div>
-    <main class="rank-movie container">
-      <div class="movie-slide">
+    <main class="container slide-position">
+      <div class="movie-slide up-position">
         <ul class="movie-list" type="slide"></ul>
       </div>
-      <figure class="move-slide">
+      <figure class="main-slide" id="moveSlide">
         <button value="prev">이전</button>
         <button value="next">다음</button>
       </figure>

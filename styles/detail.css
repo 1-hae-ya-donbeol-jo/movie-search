@@ -160,4 +160,7 @@ header figure {
   display: flex;
 }
 
-/* 여기까지 영화 상세 페이지: 포토 메뉴 부분입니다. */
+.similar-movies-list {
+  margin-top: 40px;
+  display: flex;
+}
