@@ -25,7 +25,6 @@ a:hover {
 .slide-position {
   position: relative;
 }
-
 .movie-visual {
   overflow: hidden;
 
@@ -61,7 +60,7 @@ a:hover {
 .poster-movie {
   position: relative;
   overflow: hidden;
-
+  width: 200px;
   height: 300px;
 }
 
