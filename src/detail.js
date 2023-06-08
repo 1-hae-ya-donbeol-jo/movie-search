@@ -1,7 +1,7 @@
+import { addComment } from "./apis/comment.js";
 import { getDetailMovie, getDetailMovieImages, getSimilarMovie } from "./apis/movie.js";
 import { Slider } from "./models/Slider.js";
 import { drawMovieList } from "./movie.js";
-import { addComment } from "./apis/comment.js";
 
 const searchParams = new URLSearchParams(location.search);
 const movieId = searchParams.get("movieId");
@@ -23,30 +23,49 @@ const renderDetail = async () => {
 
   const movieDetailElement = document.querySelector(".movie-detail");
   movieDetailElement.innerHTML = `
-    <img class="detail-movie-poster" src="https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}" alt="${movieDetail.title} 포스터"/>
-    <figure class="detail-movie-box">
-      <section class="detail-movie-main">
-      <h2 class="detail-movie-title">${movieDetail.title}</h2>
-        <span class="detail-movie-status-box">
-          <p class="detail-movie-status">${movieDetail.status}</p>
-        </span>
-      </section>
+    <div class="detail-movie-info-box">
+      <img class="detail-movie-poster" src="https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}" alt="${movieDetail.title} 포스터"/>
+    
+      <div class="detail-movie-box">
+        <div class="detail-movie-main">
+          <h2 class="detail-movie-title">${movieDetail.title}</h2>
+
+          <span class="detail-movie-status-box">
+            <p class="detail-movie-status">${movieDetail.status}</p>
+          </span>
+        </div>
+
+        
+        <dl class="detail-movie-info">
+          <dt>개봉일자</dt>
+          <dd>${movieDetail.release_date}</dd>
+          
+          <dt>장르</dt>
+          <dd>${genres}</dd>
+          
+          <dt>러닝타임</dt>
+          <dd>${movieDetail.runtime}분</dd>
+          
+          <dt>수익</dt>
+          <dd>${revenue}달러</dd>
+          
+          <dt>평점</dt>
+          <dd>${movieDetail.vote_average}점</dd>
+          
+          <dt>투표 수</dt>
+          <dd>${voteCount}개</dd>
+          
+          <dt>국가</dt>
+          <dd>${productionCountries}</dd>
+          
+          <dt>제작사</dt>
+          <dd>${productionCompanies}</dd>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="overview-title">줄거리</h3>
     <p class="detail-movie-overview">${movieDetail.overview}</p>
-      <section class="detail-movie-info">
-        <div class="detail-movie-left">
-          <p> 개봉일자: ${movieDetail.release_date}</p>
-          <p> 장르: ${genres}</p>
-          <p> 러닝타임: ${movieDetail.runtime}분</p>
-          <p> 수익: ${revenue}달러</p>
-        </div>
-        <div class="detail-movie-right">
-          <p> 평점: ★ ${movieDetail.vote_average}점</p>
-          <p> 투표 수: ${voteCount}개</p>
-          <p> 국가: ${productionCountries}</p>
-          <p> 제작사: ${productionCompanies}</p>
-        </div>
-      </section>
-    </figure>
   `;
 };
 renderDetail();
@@ -144,3 +163,19 @@ commentForm.addEventListener("submit", event => {
 // localStorage.setItem(`${userId}`, JSON.stringify(userList));
 // console.log(userList);
 // };
+
+//<div class="detail-movie-info">
+// <div class="detail-movie-left">
+//   <p> 개봉일자: ${movieDetail.release_date}</p>
+//   <p> 장르: ${genres}</p>
+//   <p> 러닝타임: ${movieDetail.runtime}분</p>
+//   <p> 수익: ${revenue}달러</p>
+// </div>
+
+// <div class="detail-movie-right">
+//   <p> 평점: ★ ${movieDetail.vote_average}점</p>
+//   <p> 투표 수: ${voteCount}개</p>
+//   <p> 국가: ${productionCountries}</p>
+//   <p> 제작사: ${productionCompanies}</p>
+// </div>
+// </div>

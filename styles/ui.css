@@ -517,65 +517,89 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   width: 100%;
+
   margin-left: 16px;
 }
 
 .guest-section .user-comment {
   font-size: 18px;
-  color: #616161;
+  color: var(--color_gray6);
 }
 
 .guest-section .date {
   margin-left: 4px;
+
   font-weight: 500;
-  color: #616161;
+  color: var(--color_gray6);
 }
+
 .guest-section .card-btn button {
   padding: 6px 10px;
 }
+
 .guest-section .btn-delete-comment {
   background-color: #9b9b9b;
-  color: #fff;
+
   border-radius: 3px;
+
   line-height: 1;
+  color: var(--color_white);
 }
+
 .guest-section .btn-update-comment {
-  line-height: 1;
   border-radius: 3px;
+
+  line-height: 1;
 }
 
 .guest-section .btn-global {
+  display: inline-block;
+
   padding: 12px 33px;
-  background-color: #000;
+
+  background-color: var(--color_black);
+
   border-radius: 3px;
+
   font-weight: 700;
   font-size: 16px;
-  color: #fff;
-  display: inline-block;
+  color: var(--color_white);
 }
+
 .guest-section .btn-global:hover {
-  opacity: 0.7;
-  color: #fff;
   display: inline-block;
+
+  opacity: 0.7;
+
+  color: var(--color_white);
+
   transition: 0.3s ease-out;
 }
 
 .guest-section .btn-global-kr {
   position: relative;
-  float: right;
-  z-index: 99;
   top: -76px;
   right: 24px;
+  z-index: 99;
+
+  float: right;
   padding: 12px 33px;
+
   background-color: #000;
+
   border-radius: 3px;
+
   font-weight: 500;
   font-size: 16px;
-  color: #fff;
+  color: var(--color_white);
 }
+
 .guest-section .btn-global-kr:hover {
   opacity: 0.7;
-  color: #fff;
+
+  color: var(--color_white);
+
   transition: 0.3s ease-out;
 }
