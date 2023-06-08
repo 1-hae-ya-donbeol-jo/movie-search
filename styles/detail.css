@@ -4,7 +4,6 @@
   font-style: normal;
 }
 
-
 header figure {
   cursor: pointer;
 }
@@ -93,3 +92,8 @@ header figure {
 }
 
 /* "printWidth": 100, */
+
+.similar-movies-list {
+  margin-top: 40px;
+  display: flex;
+}

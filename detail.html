@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/common.css" />
 
+    <script src="./src/utils/slider.js" type="module" defer></script>
     <script src="./src/detail.js" type="module" defer></script>
 
     <!-- @TODO detail 제목 -->
@@ -42,19 +43,32 @@
         </div>
       </div>
     </header>
-    <!--header-->
 
-    <!-- @TODO 영화 상세 박스 -->
-    
-    <!-- @TODO 영화 추천 -->
-    <div class="container">
+    <div class="container" style="display: none">
       <main class="movie-detail"></main>
-      <ul class="similar-movies-list grid"></ul>
+      <div class="slide-position">
+        <div class="movie-slide">
+          <ul class="similar-movies-list"></ul>
+        </div>
+        <figure class="detail-slide" id="moveSlide">
+          <button value="prev">이전</button>
+          <button value="next">다음</button>
+        </figure>
+      </div>
     </div>
 
+    <section>
+      <form action="" id="setForm">
+        <label for="userName">이름</label>
+        <input type="text" id="userName" />
+        <label for="userName">후기</label>
+        <input type="text" id="userComment" />
+        <button>작성</button>
+      </form>
+    </section>
+    <ul class="comment-list"></ul>
 
-    <!-- @TODO 덧글 작성 -->
-    <section class="guest-section">
+    <section class="guest-section" style="display: none">
       <!-- 댓글 폼 -->
       <div class="global-inner">
         <div class="tit-wrap">
@@ -133,7 +147,6 @@
       </div>
       <!-- 댓글 폼 END -->
     </section>
-    <!-- @TODO 덧글 작성 끝 -->
 
     <footer class="footer">
       <div class="global-inner">
@@ -152,6 +165,5 @@
         </div>
       </div>
     </footer>
-    <!--footer-->
   </body>
 </html>
