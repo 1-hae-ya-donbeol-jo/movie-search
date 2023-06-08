@@ -29,6 +29,7 @@ a:hover {
 .recommend-movies {
   border-bottom: 1px solid var(--color_gray1);
   padding-bottom: 12rem;
+  padding-top: 80rem;
   font-family: "Inter";
   font-weight: 500;
   font-size: 24rem;
@@ -274,18 +275,6 @@ a:hover {
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
-}
-
-/* **************************************** *
-* 1) Global 
-* **************************************** */
-.global-inner {
-  width: 100%;
-  max-width: 1020px;
-  margin: 0 auto;
-}
-textarea {
-  resize: none;
 }
 
 /* **************************************** *

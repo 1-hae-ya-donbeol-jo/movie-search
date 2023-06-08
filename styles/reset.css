@@ -141,3 +141,7 @@ button {
 html {
   scroll-behavior: smooth;
 }
+
+textarea {
+  resize: none;
+}
