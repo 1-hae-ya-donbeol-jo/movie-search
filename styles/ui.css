@@ -1,4 +1,3 @@
-
 /*
  * File       : ui.css
  * Author     : 내일배움캠프 6기 1조
@@ -18,7 +17,7 @@ a {
   transition: 0.2s ease;
   cursor: pointer;
 }
-a:hover{
+a:hover {
   opacity: 0.6;
   transition: 0.2s ease;
   cursor: pointer;
@@ -160,17 +159,13 @@ input[id="menuIcon"]:checked + label span:nth-child(3) {
   margin-top: auto;
 }
 
-
-
-
-
 /* **************************************** *
 * 1) Global 
 * **************************************** */
-.global-inner{
-width: 100%;
-max-width: 1020px;
-margin: 0 auto;
+.global-inner {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
 }
 textarea {
   resize: none;
@@ -179,47 +174,47 @@ textarea {
 /* **************************************** *
 * 02) Header
 * **************************************** */
- .header{
+.header {
   width: 100%;
   height: 56px;
-  background: hsla(0,0%,100%,.85);
+  background: hsla(0, 0%, 100%, 0.85);
   backdrop-filter: blur(10px);
   position: fixed;
   z-index: 999;
 }
-.header-inner{
+.header-inner {
   display: flex;
   width: 100%;
   height: 100%;
 }
-.header-logo{
+.header-logo {
   display: flex;
   align-items: center;
   margin-right: 24px;
 }
-.header-wrap{
+.header-wrap {
   width: 100%;
   display: flex;
 }
-.header-utill{
+.header-util {
   display: flex;
   align-items: center;
   justify-content: end;
   width: 20%;
 }
-.header-utill .utill-item{
+.header-util .util-item {
   margin-left: 14px;
 }
-.header-utill .utill-item.mobile{
+.header-util .util-item.mobile {
   display: none;
 }
 /* gnb */
 
-.gnb-inner{
- height: 100%;
- display: flex;
- align-items: center;
- justify-content: space-between;
+.gnb-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .gnb-inner .item {
   display: flex;
@@ -230,87 +225,85 @@ textarea {
   margin: 0 7px;
   transition: 0.2s ease;
 }
-.gnb-inner .item a{
+.gnb-inner .item a {
   color: #919191;
   text-decoration: none;
 }
-.gnb-inner .item:hover{
+.gnb-inner .item:hover {
   opacity: 0.6;
   transition: 0.2s ease;
 }
 
-
-
- /* **************************************** *
+/* **************************************** *
  * 03) Footer
  * **************************************** */
- .footer {
-    background-color: var(--color_gray7);
-    padding: 45px 0 50px 0;
-    width: 100%;
-    margin-top: 140px;
-  }
-  .footer-top {
-    display: flex;
-    justify-content: space-between;
-    color: var(--color_white);
-    font-size: 14px;
-    font-weight: 700;
-  }
-  .footer-top .desc{
-    color: var(--color_gray3);
-    font-weight: 500;
-    line-height: 1.5;
-  }
-  .footer-top .links .item {
-    margin-right: 10px;
-  }
-  .copylight{
-    color: var(--color_gray6);
-    font-size: 14px;
-    font-weight: 700;
-    margin-top: 15px;
-  }
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    color: var(--color_gray6);
-    font-size: 14px;
-    font-weight: 700;
-  }
+.footer {
+  background-color: var(--color_gray7);
+  padding: 45px 0 50px 0;
+  width: 100%;
+  margin-top: 140px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color_white);
+  font-size: 14px;
+  font-weight: 700;
+}
+.footer-top .desc {
+  color: var(--color_gray3);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.footer-top .links .item {
+  margin-right: 10px;
+}
+.copylight {
+  color: var(--color_gray6);
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color_gray6);
+  font-size: 14px;
+  font-weight: 700;
+}
 
 /* **************************************** *
 * 04) 후기 [김선익]
 * **************************************** */
 
-.guest-section{ 
-  margin-top: 230px; 
+.guest-section {
+  margin-top: 230px;
 }
-.guest-section .tit-wrap{
+.guest-section .comment-tit {
   display: inline-block;
 }
-.guest-section .guest-tit{
-  display: inline-block; 
+.guest-section .guest-tit {
+  display: inline-block;
   margin-bottom: 18px;
-  font-size: 24px; 
+  font-size: 24px;
 }
-.guest-section .badge-num{
+.guest-section .badge-num {
   display: inline-block;
-  left: -12px; 
-  top: -18px; 
+  left: -12px;
+  top: -18px;
   font-size: 24px;
   font-weight: 700;
-  color : #E96921;
+  color: #e96921;
 }
 
-.guest-section input[type=text] {
-  width: 100%;
-  padding: 20px 25px;    
+.guest-section input[type="text"] {
+  width: 50%;
+  padding: 20px 25px;
   border-style: none;
-  border: 1px solid #E8E8E8;
-} 
+  border: 1px solid #e8e8e8;
+}
 
-.guest-section textarea{
+.guest-section textarea {
   width: 100%;
   height: 160px !important;
   padding: 20px 200px 20px 25px;
@@ -319,102 +312,108 @@ textarea {
   margin-top: 10px;
 }
 
-.guest-section button{
+.guest-section button {
   border-style: none;
   cursor: pointer;
 }
-.guest-section button:hover{
+.guest-section button:hover {
   cursor: pointer;
 }
-.guest-section .guest-comment-list{
+.guest-section .guest-comment-list {
   margin-bottom: 34px;
 }
-.guest-section .card{
-  width: 100%; 
+.guest-section .card {
+  width: 100%;
   padding: 34px 25px;
-  border-bottom: 1px solid #e8e8e8; 
+  border-bottom: 1px solid #e8e8e8;
 }
-.guest-section .card:first-child{
-  border-top: 1px solid #000; 
+.guest-section .card:first-child {
+  border-top: 1px solid #000;
 }
-.guest-section .card-body{
-  display: flex; 
-  width: 100%; 
+.guest-section .card-body {
+  display: flex;
+  width: 100%;
 }
-.guest-section .user-tit{
-  display: flex; 
-  justify-content: space-between; 
-  margin-bottom: 6px; 
-  font-size: 18px; 
-  font-weight: 600; 
+.guest-section .user-tit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
 }
-.guest-section .user-comment-wrap{
-  display: flex; 
-  flex-direction: column; 
+.guest-section .user-comment-wrap {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  width: 100%; 
-  margin-left: 16px; 
+  width: 100%;
+  margin-left: 16px;
 }
-.guest-section .user-comment{
-  font-size: 18px; 
-  color:#616161;
+.guest-section #user-comment {
+  font-size: 18px;
+  color: #616161;
 }
-.guest-section .date{
+.guest-section .date {
   margin-left: 4px;
   font-weight: 500;
   color: #616161;
 }
-.guest-section .user-profile{
+.guest-section .user-profile {
   display: inline-block;
   width: 64px;
 }
-.guest-section .card-btn{
-  margin-left: 10px; 
+.guest-section .card-btn {
+  margin-left: 10px;
   margin-top: -3px;
 }
-.guest-section .card-btn button{
+.guest-section .card-btn button {
   padding: 6px 10px;
 }
-.guest-section .btn-delete-comment{ 
-  background-color: #9b9b9b; 
-  color: #fff; 
-  border-radius: 3px; 
-  line-height: 1;
-}
-.guest-section .btn-update-comment{
-  line-height: 1;
-  border-radius: 3px; 
-}
-
-.guest-section .btn-global{
-  padding: 12px 33px; 
-  background-color: #000; 
-  border-radius: 3px; 
-  font-weight: 700; 
-  font-size: 16px; 
-  color: #fff; display: inline-block;
-}
-.guest-section .btn-global:hover{
-  opacity: 0.7; 
+.guest-section .btn-delete-comment {
+  background-color: #9b9b9b;
   color: #fff;
-  transition: 0.3s ease-out; 
-}
-
-.guest-section .btn-global-kr{
-  position: relative; 
-  float: right; 
-  z-index: 99; 
-  top: -76px; 
-  right: 24px;
-  padding: 12px 33px; 
-  background-color: #000; 
   border-radius: 3px;
-  font-weight: 500; 
-  font-size: 16px; 
+  line-height: 1;
+}
+.guest-section .btn-update-comment {
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.guest-section .btn-global {
+  padding: 12px 33px;
+  background-color: #000;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  display: inline-block;
+}
+.guest-section .btn-global:hover {
+  opacity: 0.7;
+  color: #fff;
+  transition: 0.3s ease-out;
+}
+
+.guest-section .btn-global-kr {
+  position: relative;
+  float: right;
+  z-index: 99;
+  top: -76px;
+  right: 24px;
+  padding: 12px 33px;
+  background-color: #000;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 16px;
   color: #fff;
 }
-.guest-section .btn-global-kr:hover{
-  opacity: 0.7; 
+.guest-section .btn-global-kr:hover {
+  opacity: 0.7;
   color: #fff;
-  transition: 0.3s ease-out; 
+  transition: 0.3s ease-out;
+}
+
+.user-account-wrap {
+  display: flex;
+  gap: 5px;
 }

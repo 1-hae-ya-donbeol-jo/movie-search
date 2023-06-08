@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./styles/common.css" />
 
     <script src="./src/detail.js" type="module" defer></script>
+    <script src="./src/comment.js" defer></script>
 
     <!-- @TODO detail 제목 -->
     <title>${title}</title>
@@ -21,9 +22,9 @@
     <header class="header">
       <div class="header-inner global-inner">
         <div class="header-wrap">
-          <div class="header-logo">
+          <figure class="main-logo header-logo">
             <img src="./assets/logo.svg">
-          </div>
+          </figure>
           <nav class="gnb">
             <ul class="gnb-inner">
               <li class="item"><a href="#"><span>추천영화</span></a></li>
@@ -31,10 +32,10 @@
             </ul>
           </nav>
         </div>
-        <div class="header-utill">
-            <a class="utill-item"><img src="./assets/ico_lang.svg"></a>
-            <a class="utill-item"><img src="./assets/ico_user.svg"></a>
-            <a class="utill-item mobile"><img src="./assets/ico_hamburger.svg"></a>
+        <div class="header-util">
+            <a class="util-item"><img src="./assets/ico_lang.svg"></a>
+            <a class="util-item"><img src="./assets/ico_user.svg"></a>
+            <a class="util-item mobile"><img src="./assets/ico_hamburger.svg"></a>
         </div>
       </div>
     </header><!--header-->
@@ -49,82 +50,55 @@
 
     <!-- @TODO 덧글 작성 -->
     <section class="guest-section">
-      <!-- 댓글 폼 -->
       <div class="global-inner">
-        <div class="tit-wrap">
-          <h3 class="guest-tit">후기</h3>
-          <span class="badge-num">2</span>
+        <div class="comment-tit">
+            <h3 class="guest-tit">후기</h3>
+            <span class="badge-num" >0</span>  
         </div>
+        <div class="guest-comment-list"></div>
 
-        <div class="guest-comment-list">
-            <!-- 댓글 -->
-            <div class="card" id="${_id}">
-              <div class="card-body">
-                <div class="user-profile">
-                  <img src="./assets/user_comment_profile2.svg">
-                </div>
-                <div class="user-comment-wrap">
-                  <div class="user-tit">
-                    <p>
-                      김선익
-                      <span class="date">Apr 29. 2023</span>
-                    </p>
-                    
-                    <div class="card-btn">
-                      <button type="button" class="btn-update-comment">수정</button>
-                      <button type="button" class="btn-delete-comment">삭제</button>
-                    </div>
-                  </div>
-                  <p class="user-comment">영화 재밌어요 추천합니다 :)</p>
-                </div>
-              </div>
-            </div><!-- 댓글 END -->
-           
-            <!-- 댓글 -->
-            <div class="card" id="${_id}">
-                <div class="card-body">
-                  <div class="user-profile">
-                    <img src="./assets/user_comment_profile.svg">
-                  </div>
-                  <div class="user-comment-wrap">
-                    <div class="user-tit">
-                      <p>${name}</p>
-                      <div class="card-btn">
-                        <button type="button" class="btn-update-comment">수정</button>
-                        <button type="button" class="btn-delete-comment">삭제</button>
-                      </div>
-                    </div>
-                    <p class="user-comment">${comment}</p>
-                  </div>
-                </div>
-            </div><!-- 댓글 END -->
-        </div>
-
-        <div class="mypostcount">
+        <!-- QA. 
+          1. form 태그 안에 div를 사용하는건 괜찮을까? 
+          2. textarea가 아닌 어떤 타입으로 받는게 좋을까?
+         -->
+        <form id="commnet-form">
+          <div class="user-account-wrap">
+            <input type="text" id="name" placeholder="홍길동" />
+            <label for="name"></label>
+            <input type="text" id="password" placeholder="비밀번호" />
+            <label for="password"></label>  
+          </div>
+          <div class="">
+            <textarea placeholder="후기를 남겨주세요!" id="comment" style="height: 100px" ></textarea>
+            <label for="comment"></label>
+          </div>
+          <button onclick="saveComment()" type="submit" id="submitBtn" class="btn btn-dark btn-global-kr">
+            후기 남기기
+          </button>
+        </form>
+        <!-- <div class="mypostcount">
           <p class="count"></p>
           <div class="mypost">
-            <div class="">
+            <div class="user-account-wrap">
               <input type="text" class="form-control" id="name" placeholder="홍길동" />
-              <label for="floatingInput"></label>
+              <label for="name"></label>
+              <input type="text" class="form-control" id="password" placeholder="비밀번호" />
+              <label for="password"></label>
             </div>
             <div class="">
-              <textarea
-                class="form-control"
-                placeholder="후기를 남겨주세요!"
-                id="comment"
-                style="height: 100px"
-              ></textarea>
-              <label for="floatingTextarea2"></label>
+              <textarea class="form-control" placeholder="후기를 남겨주세요!" id="comment" style="height: 100px" ></textarea>
+              <label for="comment"></label>
             </div>
-            <button onclick="save_comment()" type="button" class="btn btn-dark btn-global-kr">
+            <button onclick="saveComment()" type="button" class="btn btn-dark btn-global-kr">
               후기 남기기
             </button>
           </div>
-        </div>
+        </div> -->
+      </div>
+   
 
-        <div class="mycards" id="comment-list">
-        </div>
-      </div><!-- 댓글 폼 END -->
+      <div class="mycards" id="comment-list">
+      </div>
     </section><!-- @TODO 덧글 작성 끝 -->
 
 
