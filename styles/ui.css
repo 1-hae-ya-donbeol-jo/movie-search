@@ -24,6 +24,17 @@ a:hover {
 
 .slide-position {
   position: relative;
+  margin-top: 60rem;
+}
+
+.recommend-movies {
+  border-bottom: 1px solid var(--color_gray1);
+  padding-bottom: 12rem;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 24rem;
+  line-height: 29rem;
+  color: var(--color_black);
 }
 
 .movie-visual {

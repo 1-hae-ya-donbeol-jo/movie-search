@@ -8,7 +8,6 @@ const movieId = searchParams.get("movieId");
 const renderDetail = async () => {
   const movieDetail = await getDetailMovie(movieId);
   // genres, production_countries, production_companies 배열 정보 가져오는 데에 map 함수 사용
-
   const genres = movieDetail.genres.map(genre => `${genre.name}`).join(", ");
   console.log(genres);
   const productionCountries = movieDetail.production_countries
@@ -17,7 +16,6 @@ const renderDetail = async () => {
   const productionCompanies = movieDetail.production_companies
     .map(company => `${company.name}`)
     .join(", ");
-
   // revenue, vote_count에는 읽기 쉽도록 숫자 형식 지정: 천 단위 기준 쉼표
   const revenue = movieDetail.revenue.toLocaleString();
   const voteCount = movieDetail.vote_count.toLocaleString();
@@ -50,11 +48,9 @@ const renderDetail = async () => {
     </figure>
   `;
 };
-
 renderDetail();
 
-// 관련 영화 추천 [김채현]
-// similar api 가져오기
+// 관련 영화 추천 [김채현]: similar api 가져오기
 export const renderSimilar = async () => {
   const similarMovie = await getSimilarMovie(movieId);
 
@@ -63,24 +59,41 @@ export const renderSimilar = async () => {
 
 renderSimilar();
 
-// 영화 상세 이미지 나열
-// const renderDetailImages = async () => {
-//   const movieDetailImages = await getDetailMovieImages(movieId);
+// 영화 상세 포토 나열
+const renderDetailMovieImages = async () => {
+  const detailImages = await getDetailMovieImages(movieId);
+  const detailImagesCount = document.querySelector(".detail-counts");
+  detailImagesCount.innerHTML = `${detailImages.length}`;
+  const detailImagesList = document.querySelector(".detail-image-list");
+  const detailImageContent = detailImages.reduce((_detailImages, { file_path }) => {
+    return (
+      _detailImages +
+      ` 
+      <li class="detail-image-item">
+        <figure class="detail-image-box">
+          <img src="https://image.tmdb.org/t/p/w500/${file_path}"/>
+        </figure>
+      </li>
+      `
+    );
+  }, "");
+  detailImagesList.innerHTML = detailImageContent;
+};
+await renderDetailMovieImages();
 
-//   const movieDetailImagesCount = document.querySelector(".detail-counts");
-//   movieDetailImagesCount.innerHTML = `${movieDetailImages.length}`;
+// 영화 상세 포토 슬라이드 버튼
+const prevButton = document.querySelector(".prev-button");
+const nextButton = document.querySelector(".next-button");
+const sliderList = document.querySelector(".detail-image-list");
 
-//   const movieDetailImagesElement = document.querySelector(".movie-images-list");
-//   movieDetailImagesElement.innerHTML = movieDetailImages.reduce((newMovieImages, { file_path }) => {
-//     return (newMovieImages += `
-//       <li class="movie-images-items">
-//         <img src="https://image.tmdb.org/t/p/w200/${file_path}">
-//       </li>
-//   `);
-//   }, "");
-// };
+const slider = new Slider(prevButton, nextButton, sliderList, 8);
+slider.connect();
 
-// renderDetailImages();
+// 로고 클릭 시 메인 페이지 이동
+const gotoMainPage = document.querySelector("#logo");
+gotoMainPage.addEventListener("click", () => {
+  window.location.href = "/";
+});
 
 // // localStorage 댓글
 // const setBtn = document.querySelector("#setForm");
@@ -162,32 +175,3 @@ renderSimilar();
 //   });
 // });
 // getComment();
-
-const renderDetailMovieImages = async () => {
-  const detailImages = await getDetailMovieImages(movieId);
-  const detailImagesList = document.querySelector(".detail-image-list");
-
-  const detailImageContent = detailImages.reduce((_detailImages, { file_path }) => {
-    return (
-      _detailImages +
-      ` 
-      <li class="detail-image-item">
-        <figure class="detail-image-box">
-          <img src="https://image.tmdb.org/t/p/w500/${file_path}"/>
-        </figure>
-      </li>
-      `
-    );
-  }, "");
-
-  detailImagesList.innerHTML = detailImageContent;
-};
-
-await renderDetailMovieImages();
-
-const prevButton = document.querySelector(".prev-button");
-const nextButton = document.querySelector(".next-button");
-const sliderList = document.querySelector(".detail-image-list");
-
-const slider = new Slider(prevButton, nextButton, sliderList, 8);
-slider.connect();
