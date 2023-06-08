@@ -24,7 +24,6 @@ a:hover {
 
 .slide-position {
   position: relative;
-  padding-top: 80rem;
 }
 
 .recommend-movies {
@@ -276,155 +275,6 @@ a:hover {
   font-weight: 700;
   line-height: 19px;
 }
-/* **************************************** *
-* 1) Global 
-* **************************************** */
-.global-inner {
-  width: 100%;
-  max-width: 1020px;
-  margin: 0 auto;
-}
-
-/* **************************************** *
-* 02) 후기 [김선익]
-* **************************************** */
-
-.guest-section {
-  padding-top: 80rem;
-}
-.guest-section .tit-wrap {
-  display: inline-block;
-}
-.guest-section .guest-tit {
-  display: inline-block;
-  margin-bottom: 18px;
-  font-size: 24px;
-}
-.guest-section .badge-num {
-  display: inline-block;
-  left: -12px;
-  top: -18px;
-  font-size: 24px;
-  font-weight: 700;
-  color: #e96921;
-}
-
-.guest-section input[type="text"] {
-  width: 100%;
-  padding: 20px 25px;
-  border-style: none;
-  border: 1px solid #e8e8e8;
-}
-
-.guest-section textarea {
-  width: 100%;
-  height: 160px !important;
-  padding: 20px 200px 20px 25px;
-  border-style: none;
-  border: 1px solid #e8e8e8;
-  margin-top: 10px;
-}
-
-.guest-section button {
-  border-style: none;
-  cursor: pointer;
-}
-.guest-section button:hover {
-  cursor: pointer;
-}
-.guest-section .guest-comment-list {
-  margin-bottom: 34px;
-}
-.guest-section .card {
-  width: 100%;
-  padding: 34px 25px;
-  border-bottom: 1px solid #e8e8e8;
-}
-.guest-section .card:first-child {
-  border-top: 1px solid #000;
-}
-.guest-section .card-body {
-  display: flex;
-  width: 100%;
-}
-.guest-section .user-tit {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
-  font-size: 18px;
-  font-weight: 600;
-}
-.guest-section .user-comment-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  margin-left: 16px;
-}
-.guest-section .user-comment {
-  font-size: 18px;
-  color: #616161;
-}
-.guest-section .date {
-  margin-left: 4px;
-  font-weight: 500;
-  color: #616161;
-}
-.guest-section .user-profile {
-  display: inline-block;
-  width: 64px;
-}
-.guest-section .card-btn {
-  margin-left: 10px;
-  margin-top: -3px;
-}
-.guest-section .card-btn button {
-  padding: 6px 10px;
-}
-.guest-section .btn_delete_comment {
-  background-color: #9b9b9b;
-  color: #fff;
-  border-radius: 3px;
-  line-height: 1;
-}
-.guest-section .btn_update_comment {
-  line-height: 1;
-  border-radius: 3px;
-}
-
-.guest-section .btn__global {
-  padding: 12px 33px;
-  background-color: #000;
-  border-radius: 3px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #fff;
-  display: inline-block;
-}
-.guest-section .btn__global:hover {
-  opacity: 0.7;
-  color: #fff;
-  transition: 0.3s ease-out;
-}
-
-.guest-section .btn__global-kr {
-  position: relative;
-  float: right;
-  z-index: 99;
-  top: -76px;
-  right: 24px;
-  padding: 12px 33px;
-  background-color: #000;
-  border-radius: 3px;
-  font-weight: 500;
-  font-size: 16px;
-  color: #fff;
-}
-.guest-section .btn__global-kr:hover {
-  opacity: 0.7;
-  color: #fff;
-  transition: 0.3s ease-out;
-}
 
 /* **************************************** *
 * 1) Global 
@@ -662,10 +512,6 @@ textarea {
   opacity: 0.7;
   color: #fff;
   display: inline-block;
-}
-.guest-section .btn__global:hover {
-  opacity: 0.7;
-  color: #fff;
   transition: 0.3s ease-out;
 }
 
