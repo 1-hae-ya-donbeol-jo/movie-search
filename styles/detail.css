@@ -4,18 +4,13 @@
   font-style: normal;
 }
 
-/* 추후 반응형 구현 시, 사용할 수 있도록 rem 값 이용 */
-html {
-  font-size: 6.25%; /* 6.25% of the base size of : 1rem = 1px */
-}
-
 header {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 200px;
-  padding: 0 2rem;
+  padding: 0 2px;
 }
 
 header img {
@@ -25,21 +20,21 @@ header img {
 .movie-detail {
   display: flex;
   justify-content: center;
-  margin-top: 81rem;
+  margin-top: 81px;
 }
 
 .detail-movie-poster {
-  max-width: 161rem;
-  max-height: 233rem;
+  max-width: 161px;
+  max-height: 233px;
 
-  border-radius: 8rem;
+  border-radius: 8;
 }
 
 .detail-movie-box {
   width: 70%;
-  padding: 15rem;
-  margin: 0rem 20rem;
-  font-size: 16rem;
+  padding: 15px;
+  margin: 0px 20px;
+  font-size: 16px;
   border-bottom: 1px solid var(--color_black);
 }
 
@@ -49,11 +44,11 @@ header img {
 }
 
 .detail-movie-title {
-  height: 29rem;
-  margin-right: 8rem;
+  height: 29px;
+  margin-right: 8px;
   font-weight: 500;
-  font-size: 24rem;
-  line-height: 29rem;
+  font-size: 24px;
+  line-height: 29px;
   text-align: center;
   color: var(--color_black);
 }
@@ -63,59 +58,64 @@ header img {
   justify-content: center;
   align-items: center;
 
-  width: 50rem;
-  height: 21rem;
+  width: 50px;
+  height: 21px;
 
   background-color: var(--color_red);
-  border-radius: 30rem;
+  border-radius: 30px;
 }
 
 .detail-movie-status {
-  height: 15rem;
+  height: 15px;
   font-weight: 500;
-  font-size: 11rem;
-  line-height: 15rem;
+  font-size: 11px;
+  line-height: 15px;
   text-align: center;
   color: var(--color_white);
 }
 
 .detail-movie-overview {
-  font-size: 14rem;
-  margin: 7rem;
+  font-size: 14px;
+  margin-top: 7px;
 
-  width: 700rem;
-  font-size: 16rem;
-  line-height: 18rem;
+  width: 700px;
+  font-size: 16px;
+  line-height: 22px;
   color: var(--color_gray5);
 }
 
 .detail-movie-info {
   display: flex;
-  margin: 5rem;
-  padding-top: 13rem;
+  margin-top: 7px;
+  padding-top: 13px;
   font-weight: 400;
-  font-size: 14rem;
-  line-height: 17rem;
+  font-size: 14px;
+  line-height: 17px;
   color: var(--color_gray6);
 }
 
 .detail-movie-left {
-  margin-right: 50rem;
+  margin-right: 50px;
 }
-
+.detail-movie-left > p {
+  line-height: 1.6;
+}
+.detail-movie-right > p {
+  line-height: 1.6;
+}
 /* 여기까지 영화 상세 페이지: 기본 화면입니다. */
 
 .movie-detail-images {
   display: flex;
   flex-direction: column;
-  padding-top: 80rem;
+  padding-top: 80px;
 }
 
 .detail-photo {
   border-bottom: 1px solid var(--color_gray1);
   font-weight: 500;
-  font-size: 24rem;
-  line-height: 29rem;
+  font-size: 24px;
+  line-height: 29px;
   color: var(--color_black);
 }
 
@@ -138,7 +138,7 @@ header img {
 
 .detail-image-slider {
   position: relative;
-  margin-top: 23rem;
+  margin-top: 23px;
 }
 
 .detail-image-display {

@@ -25,6 +25,7 @@
           <div class="header-logo">
             <img id="logo" src="./assets/logo.svg" />
           </div>
+
           <nav class="gnb">
             <ul class="gnb-inner">
               <li class="item">
@@ -36,10 +37,11 @@
             </ul>
           </nav>
         </div>
-        <div class="header-utill">
-          <a class="utill-item"><img src="./assets/ico_lang.svg" /></a>
-          <a class="utill-item"><img src="./assets/ico_user.svg" /></a>
-          <a class="utill-item mobile"><img src="./assets/ico_hamburger.svg" /></a>
+
+        <div class="header-util">
+          <a class="util-item"><img src="./assets/ico_lang.svg" /></a>
+          <a class="util-item"><img src="./assets/ico_user.svg" /></a>
+          <a class="util-item mobile"><img src="./assets/ico_hamburger.svg" /></a>
         </div>
       </div>
     </header>
@@ -54,7 +56,7 @@
           <h3 class="detail-title">포토</h3>
           <span class="detail-counts"></span>
         </div>
-        <!-- ****************** -->
+
         <div class="detail-image-slider">
           <button class="prev-button"></button>
 
@@ -64,149 +66,109 @@
 
           <button class="next-button"></button>
         </div>
-        <!-- ****************** -->
-        <!-- <figure class="detail-images">
-          <div class="movie-slide">
-            <ul class="photo-list"></ul>
-          </div>
-        </figure> -->
       </section>
+
       <!-- @TODO 영화 추천 -->
       <section id="recommend-movies" class="slide-position">
         <h3 class="recommend-movies">추천영화</h3>
+
         <div class="movie-slide">
           <ul class="similar-movies-list"></ul>
         </div>
-        <figure class="detail-slide" id="moveSlide">
+
+        <div class="detail-slide" id="moveSlide">
           <button value="prev">이전</button>
           <button value="next">다음</button>
-        </figure>
+        </div>
       </section>
-    </div>
-    <!--  -->
-    <section>
-      <form id="setForm">
-        <label for="userName">이름</label>
-        <input type="text" name="userName" id="userName" />
-        <label for="userName">후기</label>
-        <input type="text" name="userComment" id="userComment" />
-        <label for="userPassword">비밀번호</label>
-        <input type="text" name="userPassword" id="userPassword" />
-        <button>작성</button>
-      </form>
-    </section>
-    <!--  -->
-    <ul class="comment-list">
-      <li>
-        <form action="" id="commentNum${i}">
-          <label for="writeName">이름</label>
-          <data id="writeName">${name}</data>
-          <label for="writeComment">후기</label>
-          <data id="writeComment">${comment}</data>
-          <input id="writeComment" value="" style="display: none" />
-          <button id="editBtn">수정</button>
-          <button id="deleteBtn">삭제</button>
-        </form>
-      </li>
-    </ul>
 
-    <!-- @TODO 덧글 작성 -->
-    <section class="guest-section">
-      <!-- 댓글 폼 -->
-      <div class="container">
+      <!-- @TODO 덧글 작성 -->
+      <section class="guest-section">
+        <!-- 댓글 폼 -->
         <div class="tit-wrap">
           <h3 id="comment" class="guest-tit">후기</h3>
           <span class="badge-num">2</span>
         </div>
 
-        <div class="guest-comment-list">
+        <ul class="guest-comment-list">
           <!-- 댓글 -->
-          <div class="card" id="${_id}">
-            <div class="card-body">
-              <div class="user-profile">
-                <img src="./assets/user_comment_profile2.svg" />
-              </div>
-              <div class="user-comment-wrap">
-                <div class="user-tit">
-                  <p>
-                    김선익
-                    <span class="date">Apr 29. 2023</span>
-                  </p>
+          <li class="card" id="${_id}">
+            <img src="./assets/user_comment_profile2.svg" />
 
-                  <div class="card-btn">
-                    <button type="button" class="btn-update-comment">수정</button>
-                    <button type="button" class="btn-delete-comment">삭제</button>
-                  </div>
-                </div>
-                <p class="user-comment">영화 재밌어요 추천합니다</p>
-              </div>
-            </div>
-          </div>
-          <!-- 댓글 END -->
+            <div class="user-comment-wrap">
+              <div class="user-tit">
+                <p>
+                  김선익
+                  <span class="date">Apr 29. 2023</span>
+                </p>
 
-          <!-- 댓글 -->
-          <div class="card" id="${_id}">
-            <div class="card-body">
-              <div class="user-profile">
-                <img src="./assets/user_comment_profile.svg" />
-              </div>
-              <div class="user-comment-wrap">
-                <div class="user-tit">
-                  <p>${name}</p>
-                  <div class="card-btn">
-                    <button type="button" class="btn-update-comment">수정</button>
-                    <button type="button" class="btn-delete-comment">삭제</button>
-                  </div>
+                <div class="card-btn">
+                  <button type="button" class="btn-update-comment">수정</button>
+                  <button type="button" class="btn-delete-comment">삭제</button>
                 </div>
-                <p class="user-comment">${comment}</p>
               </div>
+              <p class="user-comment">영화 재밌어요 추천합니다</p>
             </div>
-          </div>
+          </li>
           <!-- 댓글 END -->
-        </div>
+        </ul>
 
         <div class="mypostcount">
-          <p class="count"></p>
-          <div class="mypost">
-            <div class="">
-              <input type="text" class="form-control" id="name" placeholder="홍길동" />
-              <label for="floatingInput"></label>
-            </div>
-            <div class="">
-              <textarea
-                class="form-control"
-                placeholder="후기를 남겨주세요!"
-                id="comment"
-                style="height: 100px"
-              ></textarea>
-              <label for="floatingTextarea2"></label>
-            </div>
-            <button onclick="save_comment()" type="button" class="btn btn-dark btn-global-kr">
-              후기 남기기
-            </button>
-          </div>
+          <input type="text" class="form-control" id="name" placeholder="홍길동" />
+          <textarea class="form-control" placeholder="후기를 남겨주세요!" id="comment"></textarea>
+
+          <button onclick="save_comment()" type="button" class="btn btn-dark btn-global-kr">
+            후기 남기기
+          </button>
         </div>
+
         <div class="mycards" id="comment-list"></div>
-      </div>
-      <!-- 댓글 폼 END -->
-    </section>
+        <!-- 댓글 폼 END -->
+      </section>
+    </div>
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer-top">
-          <div class="links">
-            <a class="item" href="https://www.themoviedb.org/?language=ko" target="_blank">TMDB</a>
-            <a class="item" href="https://spartacodingclub.kr" target="_blank">스파르타코딩클럽</a>
-          </div>
-          <div>
-            <p class="desc">
-              위 내용에 대한 저작권 및 법적 책임은 자료제공사 또는<br />
-              글쓴이에 있으며 우리의 입장과 다를 수 있습니다.
-            </p>
-            <div class="copylight">© 2023 일해야돈벌조. All rights reserved</div>
-          </div>
+      <div class="footer-top container">
+        <div class="links">
+          <a class="item" href="https://www.themoviedb.org/?language=ko" target="_blank">TMDB</a>
+          <a class="item" href="https://spartacodingclub.kr" target="_blank">스파르타코딩클럽</a>
+        </div>
+
+        <div>
+          <p class="desc">
+            위 내용에 대한 저작권 및 법적 책임은 자료제공사 또는<br />
+            글쓴이에 있으며 우리의 입장과 다를 수 있습니다.
+          </p>
+          <div class="copylight">© 2023 일해야돈벌조. All rights reserved</div>
         </div>
       </div>
     </footer>
   </body>
 </html>
+
+<!-- <section>
+  <form id="setForm">
+    <label for="userName">이름</label>
+    <input type="text" name="userName" id="userName" />
+    <label for="userName">후기</label>
+    <input type="text" name="userComment" id="userComment" />
+    <label for="userPassword">비밀번호</label>
+    <input type="text" name="userPassword" id="userPassword" />
+    <button>작성</button>
+  </form>
+</section>
+
+<ul class="comment-list">
+  <li>
+    <form action="" id="commentNum${i}">
+      <label for="writeName">이름</label>
+      <data id="writeName">${name}</data>
+      <label for="writeComment">후기</label>
+      <data id="writeComment">${comment}</data>
+      <input id="writeComment" value="" style="display: none" />
+      <button id="editBtn">수정</button>
+      <button id="deleteBtn">삭제</button>
+    </form>
+  </li>
+</ul>
+-->
