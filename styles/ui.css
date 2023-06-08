@@ -22,7 +22,7 @@ a:hover {
   cursor: pointer;
 }
 
-.rank-movie {
+.slide-position {
   position: relative;
 }
 
@@ -37,12 +37,15 @@ a:hover {
 
 .movie-slide {
   overflow: hidden;
+}
 
+.up-position {
   transform: translateY(-50%);
 }
 
 .movie-list {
   display: flex;
+  transition: 300ms;
 }
 
 .movie-item {
@@ -110,11 +113,13 @@ a:hover {
   text-overflow: ellipsis;
 }
 
-.move-slide {
+.detail-slide,
+.main-slide {
   position: absolute;
 }
 
-.move-slide button {
+.detail-slide button,
+.main-slide button {
   position: absolute;
 
   z-index: 1;
@@ -131,15 +136,26 @@ a:hover {
   color: transparent;
 }
 
-.move-slide :nth-child(1) {
+.main-slide :nth-child(1) {
   transform: scaleX(-1);
   left: -13px;
   top: -360px;
 }
 
-.move-slide :nth-child(2) {
+.main-slide :nth-child(2) {
   left: 1067px;
   top: -360px;
+}
+
+.detail-slide :nth-child(1) {
+  transform: scaleX(-1);
+  left: -13px;
+  top: -200px;
+}
+
+.detail-slide :nth-child(2) {
+  left: 1067px;
+  top: -200px;
 }
 
 .now-movie {

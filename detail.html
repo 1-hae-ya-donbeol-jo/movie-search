@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/common.css" />
 
+    <script src="./src/utils/slider.js" type="module" defer></script>
     <script src="./src/detail.js" type="module" defer></script>
 
     <!-- @TODO detail 제목 -->
@@ -42,16 +43,64 @@
         </div>
       </div>
     </header>
-    <!--header-->
 
-    <!-- @TODO 영화 상세 박스 -->
-    
-    <!-- @TODO 영화 추천 -->
     <div class="container">
+      <!-- @TODO 영화 상세 박스 -->
       <main class="movie-detail"></main>
-      <ul class="similar-movies-list grid"></ul>
+      <!-- @TODO 영화 상세 박스 메뉴 나열 -->
+      <section class="movie-detail-menu">
+        <div class="detail-menu-list">
+          <h3 class="menu-photo">포토</h3>
+          <h3>추천영화</h3>
+          <h3>후기</h3>
+        </div>
+      </section>
+      <!-- @TODO 영화 이미지 리스트 -->
+      <section class="movie-detail-images">
+        <div class="detail-photo">
+          <h3 class="detail-title">포토</h3>
+          <span class="detail-counts"></span>
+        </div>
+        <!-- ****************** -->
+        <div class="detail-image-slider">
+          <button class="prev-button">이전</button>
+
+          <div class="detail-image-display">
+            <ul class="detail-image-list"></ul>
+          </div>
+
+          <button class="next-button">다음</button>
+        </div>
+        <!-- ****************** -->
+        <!-- <figure class="detail-images">
+          <div class="movie-slide">
+            <ul class="photo-list"></ul>
+          </div>
+        </figure> -->
+      </section>
+      <!-- @TODO 영화 추천 -->
+      <section class="slide-position">
+        <h3>추천영화</h3>
+        <div class="movie-slide">
+          <ul class="similar-movies-list"></ul>
+        </div>
+        <figure class="detail-slide" id="moveSlide">
+          <button value="prev">이전</button>
+          <button value="next">다음</button>
+        </figure>
+      </section>
     </div>
 
+    <section>
+      <form action="" id="setForm">
+        <label for="userName">이름</label>
+        <input type="text" id="userName" />
+        <label for="userName">후기</label>
+        <input type="text" id="userComment" />
+        <button>작성</button>
+      </form>
+    </section>
+    <ul class="comment-list"></ul>
 
     <!-- @TODO 덧글 작성 -->
     <section class="guest-section">
@@ -133,7 +182,6 @@
       </div>
       <!-- 댓글 폼 END -->
     </section>
-    <!-- @TODO 덧글 작성 끝 -->
 
     <footer class="footer">
       <div class="global-inner">
@@ -152,6 +200,5 @@
         </div>
       </div>
     </footer>
-    <!--footer-->
   </body>
 </html>

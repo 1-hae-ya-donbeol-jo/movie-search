@@ -1,5 +1,4 @@
 import { renderPopularMovie, renderSearchMovie } from "./movie.js";
-import { prevSlide, nextSlide } from "./utils/slider.js";
 import { drawSortMovieList } from "./sort.js";
 
 renderPopularMovie();
@@ -28,17 +27,6 @@ movieList.forEach(list => {
 const sortMenu = document.querySelector("#sortOpt");
 sortMenu.addEventListener("click", event => {
   drawSortMovieList(event);
-});
-
-const nextBtn = document.querySelectorAll(".move-slide");
-Array.from(nextBtn).forEach(btn => {
-  btn.addEventListener("click", event => {
-    if (event.target == event.currentTarget.firstElementChild) {
-      prevSlide();
-    } else if (event.target == event.currentTarget.lastElementChild) {
-      nextSlide();
-    }
-  });
 });
 
 const moreBtn = document.querySelector(".now-movie > button");
