@@ -15,19 +15,37 @@
     <title>영화검색</title>
   </head>
   <body>
-    <header>
-      <figure>
-        <h1 style="display: none">영화 검색 사이트</h1>
-        <img src="assets/logo.png" width="100" alt="햇님 로고" />
-      </figure>
+    <header class="header">
+      <div class="header-inner global-inner">
+        <div class="header-wrap">
+          <div class="header-logo">
+            <img src="./assets/logo.svg" />
+          </div>
+          <nav class="gnb">
+            <ul class="gnb-inner">
+              <li class="item">
+                <a href="#"><span>추천영화</span></a>
+              </li>
+              <li class="item">
+                <a href="#"><span>상영중영화</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-utill">
+          <a class="utill-item"><img src="./assets/ico_lang.svg" /></a>
+          <a class="utill-item"><img src="./assets/ico_user.svg" /></a>
+          <a class="utill-item mobile"><img src="./assets/ico_hamburger.svg" /></a>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <div class="movie-visual"></div>
+    <div class="movie-visual"></div>
+    <main class="rank-movie container">
       <div class="movie-slide">
-        <ul class="movie-list"></ul>
+        <ul class="movie-list" type="slide"></ul>
       </div>
-      <figure class="moveSilde">
+      <figure class="move-slide">
         <button value="prev">이전</button>
         <button value="next">다음</button>
       </figure>
@@ -40,22 +58,25 @@
           <button></button>
         </form>
       </div>
-      <h3 class="section-title">현재 상영 중</h3>
-      <select name="sort-option" id="sortOpt">
-        <option value="day">개봉순</option>
-        <option value="title">이름순</option>
-        <option value="vote">평점순</option>
-      </select>
+      <div class="align-center sort-title">
+        <h3 class="section-title">현재 상영 중</h3>
+        <button name="sort-option" id="sortOpt">
+          정렬
+          <option id="day">개봉순</option>
+          <option id="title">이름순</option>
+          <option id="vote">평점순</option>
+        </button>
+      </div>
       <ul class="now-movie-list grid"></ul>
       <button>더보기</button>
     </container>
-    <div 카테고리>
+    <container class="genre-movie-list container">
       <h3 class="section-title">액션</h3>
       <ul></ul>
       <h3 class="section-title">코미디</h3>
       <ul></ul>
       <h3 class="section-title">스릴러</h3>
       <ul></ul>
-    </div>
+    </container>
   </body>
 </html>

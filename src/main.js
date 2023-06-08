@@ -11,27 +11,39 @@ searchForm.addEventListener("submit", event => {
   renderSearchMovie();
 });
 
-const movieList = document.querySelector(".movie-list");
-movieList.addEventListener("click", event => {
-  let movieItem = event.target.closest("li");
+const movieList = [
+  document.querySelector(".movie-list"),
+  document.querySelector(".now-movie-list")
+];
+movieList.forEach(list => {
+  list.addEventListener("click", event => {
+    let movieItem = event.target.closest("li");
 
-  if (movieItem) {
-    window.location.href = `detail.html?movieId=${movieItem.id}`;
-  }
+    if (movieItem) {
+      window.location.href = `detail.html?movieId=${movieItem.id}`;
+    }
+  });
 });
 
 const sortMenu = document.querySelector("#sortOpt");
-sortMenu.addEventListener("change", () => {
-  drawSortMovieList();
+sortMenu.addEventListener("click", event => {
+  drawSortMovieList(event);
 });
 
-const nextBtn = document.querySelector(".moveSilde");
-nextBtn.addEventListener("click", event => {
-  // event.target == nextBtn.firstElementChild ? console.log("이전버튼") : console.log("다음버튼");
-  if (event.target == nextBtn.firstElementChild) {
-    prevSlide();
-  } else if (event.target == nextBtn.lastElementChild) {
-    nextSlide();
-  }
-  // event.target == nextBtn.firstElementChild ? prevSlide() : nextSlide();
+const nextBtn = document.querySelectorAll(".move-slide");
+Array.from(nextBtn).forEach(btn => {
+  btn.addEventListener("click", event => {
+    if (event.target == event.currentTarget.firstElementChild) {
+      prevSlide();
+    } else if (event.target == event.currentTarget.lastElementChild) {
+      nextSlide();
+    }
+  });
+});
+
+const moreBtn = document.querySelector(".now-movie > button");
+const nowList = document.querySelector(".now-movie-list");
+moreBtn.addEventListener("click", () => {
+  nowList.style.height = "auto";
+  moreBtn.style.display = "none";
 });
