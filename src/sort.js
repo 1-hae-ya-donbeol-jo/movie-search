@@ -1,12 +1,21 @@
-const sortMovies = movies => {
-  movies.sort((a, b) => {});
-};
+import { getNowPlayingMovie } from "./apis/movie.js";
+import { drawMovieList } from "./movie.js";
 
-const menuIcon = document.querySelector("#menuIcon");
-menuIcon.addEventListener("change", () => {
-  const menuSort = document.querySelector("#menuSort");
-  // if (menuIcon.checked) {
-  // menuSort.style
-  // }
-});
-console.log("🚀 ~ file: junho.js:6 ~ menuIcon:", menuIcon.checked);
+export const drawSortMovieList = async () => {
+  const movieList = await getNowPlayingMovie();
+  const sortOpt = document.querySelector("#sortOpt");
+
+  switch (sortOpt.value) {
+    case "vote":
+      movieList.sort((a, b) => b.vote_average - a.vote_average);
+      break;
+    case "title":
+      movieList.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "day":
+      movieList.sort((a, b) => b.release_date.localeCompare(a.release_date));
+      break;
+  }
+
+  drawMovieList(movieList, ".now-movie-list");
+};

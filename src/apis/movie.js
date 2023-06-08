@@ -14,14 +14,26 @@ export const getPopularMovieList = async () => {
   return movieList;
 };
 
+export const getNowPlayingMovie = async () => {
+  const { results: nowPlayingMovieList } = await fetchMovie("movie/now_playing");
+
+  return nowPlayingMovieList;
+};
+
 export const getSearchMovieList = async query => {
-  const { results: searchMovieList } = await fetchMovie(`search?query=${query}`);
+  const { results: searchMovieList } = await fetchMovie(`search/movie?query=${query}`);
 
   return searchMovieList;
 };
 
 export const getDetailMovie = async movieId => {
   const response = await fetchMovie(`movie/${movieId}`);
+
+  return response;
+};
+
+export const getSimilarMovie = async movieId => {
+  const { results: response } = await fetchMovie(`movie/${movieId}/similar`);
 
   return response;
 };
