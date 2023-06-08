@@ -150,16 +150,6 @@ header figure {
   color: var(--color_orange);
 }
 
-.movie-images-box {
-  position: relative;
-  display: flex;
-  margin-top: 23rem;
-}
-
-.movie-images-box {
-  display: flex;
-}
-
 .similar-movies-list {
   margin-top: 40px;
   display: flex;

@@ -45,19 +45,6 @@
     </header>
 
     <div class="container">
-      <main class="movie-detail"></main>
-      <div class="slide-position">
-        <div class="movie-slide">
-          <ul class="similar-movies-list"></ul>
-        </div>
-        <figure class="detail-slide" id="moveSlide">
-          <button value="prev">이전</button>
-          <button value="next">다음</button>
-        </figure>
-      </div>
-    </div>
-
-    <div class="container">
       <!-- @TODO 영화 상세 박스 -->
       <main class="movie-detail"></main>
       <!-- @TODO 영화 상세 박스 메뉴 나열 -->
@@ -75,17 +62,20 @@
           <span class="detail-counts"></span>
         </div>
         <figure class="detail-images">
-          <div class="movie-images-box">
-            <ul class="movie-images-list"></ul>
+          <div class="movie-slide">
+            <ul class="photo-list"></ul>
           </div>
         </figure>
       </section>
       <!-- @TODO 영화 추천 -->
-      <section>
-        <div class="container">
-          <main class="movie-detail"></main>
-          <ul class="similar-movies-list grid"></ul>
+      <section class="slide-position">
+        <div class="movie-slide">
+          <ul class="similar-movies-list"></ul>
         </div>
+        <figure class="detail-slide" id="moveSlide">
+          <button value="prev">이전</button>
+          <button value="next">다음</button>
+        </figure>
       </section>
     </div>
 
