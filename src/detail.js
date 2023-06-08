@@ -83,7 +83,7 @@ renderSimilar();
 
 // localStorage 댓글
 const setBtn = document.querySelector("#setForm");
-let commentList = [];
+let commentsList = [];
 
 // localStorage POST 기능
 setBtn.addEventListener("submit", event => {
@@ -95,13 +95,12 @@ setBtn.addEventListener("submit", event => {
   let userWrite = {
     name: nameValue.value,
     comment: commentValue.value,
-    password: passwordValue.value,
-    commentId: getArr.length + 1
+    password: passwordValue.value
   };
 
-  commentList.push(userWrite);
+  commentsList.push(userWrite);
 
-  let write = JSON.stringify(getArr);
+  let write = JSON.stringify(commentsList);
 
   localStorage.setItem(movieId, write);
   nameValue.value = "";
@@ -115,8 +114,30 @@ setBtn.addEventListener("submit", event => {
 
 // // localStorage GET 기능 삭제와 연동되면 오류 발생
 const getComment = () => {
+  const commentList = document.querySelector(".comment-list");
   let getArr = JSON.parse(localStorage.getItem(movieId));
+
+  getArr.forEach(getComment => {
+    const { name, comment } = getComment;
+
+    let commentLi = `<li>
+                      <form action="">
+                        <label for="writeName">이름</label>
+                        <data id="writeName">${name}</data>
+                        <label for="writeComment">후기</label>
+                        <data id="writeComment">${comment}</data>
+                        <input id="writeComment" value="" style="display: none" />
+                        <button id="editBtn">수정</button>
+                        <button id="deleteBtn">삭제</button>
+                      </form>
+                    </li>`;
+
+    return (commentList.innerHTML += commentLi);
+  });
 };
+setBtn.addEventListener("submit", () => {
+  getComment();
+});
 getComment();
 // const commentList = document.querySelector(".comment-list");
 // const getComment = () => {
