@@ -156,6 +156,8 @@ header img {
   display: flex;
 
   margin-top: 40px;
+
+  transition: 300ms;
 }
 
 .detail-image-slider {
