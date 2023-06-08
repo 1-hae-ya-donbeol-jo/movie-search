@@ -11,6 +11,7 @@ const renderDetail = async () => {
 
   // genres, production_countries, production_companies 배열 정보 가져오는 데에 map 함수 사용
   const genres = movieDetail.genres.map(genre => `${genre.name}`).join(", ");
+  console.log(genres);
   const productionCountries = movieDetail.production_countries
     .map(country => `${country.name}`)
     .join(", ");
