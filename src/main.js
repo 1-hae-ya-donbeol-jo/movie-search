@@ -1,5 +1,4 @@
 import { renderPopularMovie, renderSearchMovie } from "./movie.js";
-import { nextSlide } from "./utils/slider.js";
 import { drawSortMovieList } from "./sort.js";
 
 renderPopularMovie();
@@ -11,17 +10,28 @@ searchForm.addEventListener("submit", event => {
   renderSearchMovie();
 });
 
-const movieList = document.querySelector(".movie-list");
-movieList.addEventListener("click", event => {
-  let movieItem = event.target.closest("li");
-  console.log("🚀 ~ file: main.js:15 ~ movieItem:", movieItem);
+const movieList = [
+  document.querySelector(".movie-list"),
+  document.querySelector(".now-movie-list")
+];
+movieList.forEach(list => {
+  list.addEventListener("click", event => {
+    let movieItem = event.target.closest("li");
 
-  if (movieItem) {
-    window.location.href = `detail.html?movieId=${movieItem.id}`;
-  }
+    if (movieItem) {
+      window.location.href = `detail.html?movieId=${movieItem.id}`;
+    }
+  });
 });
 
 const sortMenu = document.querySelector("#sortOpt");
-sortMenu.addEventListener("change", () => {
-  drawSortMovieList();
+sortMenu.addEventListener("click", event => {
+  drawSortMovieList(event);
+});
+
+const moreBtn = document.querySelector(".now-movie > button");
+const nowList = document.querySelector(".now-movie-list");
+moreBtn.addEventListener("click", () => {
+  nowList.style.height = "auto";
+  moreBtn.style.display = "none";
 });

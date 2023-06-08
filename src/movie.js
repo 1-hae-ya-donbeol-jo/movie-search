@@ -3,22 +3,29 @@ import { getPopularMovieList, getSearchMovieList, getNowPlayingMovie } from "./a
 export const drawMovieList = (movieList, className) => {
   const movieListElement = document.querySelector(className);
 
+  // const upNode = movieListElement.parentNode.parentNode;
+  // const slideBtn = `
+  //   <figure class="move-slide">
+  //     <button value="prev">이전</button>
+  //     <button value="next">다음</button>
+  //   </figure>
+  // `;
+
+  // if (movieListElement.type == "slide") {
+  //   upNode.innerHTML += slideBtn;
+  // }
+
   movieListElement.innerHTML = movieList.reduce((newMovieList, movieItem) => {
-    const { poster_path, title, overview, vote_average, id } = movieItem;
+    const { poster_path, title, vote_average, id } = movieItem;
 
     return (newMovieList += `
-          <li class="movie-item" id=${id}>
-              <div class="item-poster">
-                <div class="poster-movie">
-                  <img src="https://image.tmdb.org/t/p/w200/${poster_path}" alt="${title}" />
-                  <span class="movie-rating">Rating : ${vote_average}</span>
-                </div>
-                <div class="poster-info">
-                </div>
-              </div>
-              <h2 class="movie-title">${title}</h2>
-              <p class="movie-desc" style="display: none;">${overview}</p>
-          </li>
+      <li class="movie-item" id=${id}>
+        <div class="poster-movie">
+          <img src="https://image.tmdb.org/t/p/w200/${poster_path}" alt="${title}" />
+          <span class="movie-rating">Rating : ${vote_average}</span>
+        </div>
+        <h2 class="movie-title">${title}</h2>
+      </li>
         `);
   }, "");
 };
@@ -38,7 +45,7 @@ export const renderSearchMovie = async () => {
   const searchMovieList = await getSearchMovieList(searchKeyword);
 
   if (searchMovieList.length > 0) {
-    drawNowMovieList(searchMovieList);
+    drawMovieList(searchMovieList, ".now-movie-list");
   } else {
     alert("검색된 결과가 없습니다.");
   }
