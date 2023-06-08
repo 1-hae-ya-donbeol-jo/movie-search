@@ -1,5 +1,17 @@
+let nowSlide = 0;
+const movieList = document.querySelector(".movie-list");
 export const nextSlide = () => {
-  const movieList = document.querySelector(".movie-list");
-  movieList.style.transform = "translateX(-100%)";
-  // transform: translateX(-100%);
+  nowSlide -= 100;
+  if (nowSlide >= -300) {
+    movieList.style.transform = `translateX(${nowSlide}%)`;
+    return nowSlide;
+  } else nowSlide += 100;
+};
+
+export const prevSlide = () => {
+  nowSlide += 100;
+  if (nowSlide <= 0) {
+    movieList.style.transform = `translateX(${nowSlide}%)`;
+    return nowSlide;
+  } else nowSlide -= 100;
 };
