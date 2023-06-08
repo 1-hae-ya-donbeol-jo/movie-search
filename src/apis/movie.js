@@ -25,3 +25,9 @@ export const getDetailMovie = async movieId => {
 
   return response;
 };
+
+export const getDetailMovieImages = async movieId => {
+  const { backdrops: detailMovieImages } = await fetchMovie(`movie/${movieId}/images`);
+
+  return detailMovieImages;
+};
