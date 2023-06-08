@@ -7,47 +7,78 @@
 
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/ui.css" />
+    <link rel="stylesheet" href="./styles/rwd-ui.css" />
+    <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/common.css" />
+
+    <script src="./src/utils/slider.js" type="module" defer></script>
     <script src="./src/main.js" type="module" defer></script>
-    <script src="./src/junho.js" type="module" defer></script>
 
     <title>영화검색</title>
   </head>
   <body>
-    <header>
-      <figure>
-        <img src="assets/logo.png" width="100" alt="햇님 로고" />
-      </figure>
-
-      <form class="search-form">
-        <input class="search-box" />
-        <button>검색</button>
-      </form>
-
-      <div class="menu-icon">
-        <input type="checkbox" id="menuIcon" />
-        <label for="menuIcon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <select name="" id="menuSort">
-          <optgroup label="정렬">
-            <option value="name">이름순</option>
-            <option value="name">별점순</option>
-            <option value="name">최근 개봉순</option>
-          </optgroup>
-          <optgroup label="언어">
-            <option value="name">한국어</option>
-            <option value="name">영어</option>
-            <option value="name">일본어</option>
-            <option value="name">중국어</option>
-          </optgroup>
-        </select>
+    <header class="header">
+      <div class="header-inner global-inner">
+        <div class="header-wrap">
+          <div class="header-logo">
+            <img src="./assets/logo.svg" />
+          </div>
+          <nav class="gnb">
+            <ul class="gnb-inner">
+              <li class="item">
+                <a href="#"><span>추천영화</span></a>
+              </li>
+              <li class="item">
+                <a href="#"><span>상영중영화</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-utill">
+          <a class="utill-item"><img src="./assets/ico_lang.svg" /></a>
+          <a class="utill-item"><img src="./assets/ico_user.svg" /></a>
+          <a class="utill-item mobile"><img src="./assets/ico_hamburger.svg" /></a>
+        </div>
       </div>
     </header>
 
-    <main>
-      <ul class="movie-list"></ul>
+    <div class="movie-visual"></div>
+    <main class="container slide-position">
+      <div class="movie-slide up-position">
+        <ul class="movie-list" type="slide"></ul>
+      </div>
+      <figure class="main-slide" id="moveSlide">
+        <button value="prev">이전</button>
+        <button value="next">다음</button>
+      </figure>
     </main>
+
+    <container class="now-movie container">
+      <div class="align-center">
+        <form class="search-form">
+          <input class="search-box" placeholder="movie" />
+          <button></button>
+        </form>
+      </div>
+      <div class="align-center sort-title">
+        <h3 class="section-title">현재 상영 중</h3>
+        <button name="sort-option" id="sortOpt">
+          정렬
+          <option id="day">개봉순</option>
+          <option id="title">이름순</option>
+          <option id="vote">평점순</option>
+        </button>
+      </div>
+      <ul class="now-movie-list grid"></ul>
+      <button>더보기</button>
+    </container>
+    <container class="genre-movie-list container">
+      <h3 class="section-title">액션</h3>
+      <ul></ul>
+      <h3 class="section-title">코미디</h3>
+      <ul></ul>
+      <h3 class="section-title">스릴러</h3>
+      <ul></ul>
+    </container>
   </body>
 </html>
