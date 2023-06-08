@@ -48,15 +48,15 @@
       <!-- @TODO 영화 상세 박스 -->
       <main class="movie-detail"></main>
       <!-- @TODO 영화 상세 박스 메뉴 나열 -->
-      <section class="movie-detail-menu">
+      <nav class="movie-detail-menu">
         <div class="detail-menu-list">
-          <h3 class="menu-photo">포토</h3>
-          <h3>추천영화</h3>
-          <h3>후기</h3>
+          <a href="#detail-title" class="menu-photo">포토</a>
+          <a href="#recommend-movies">추천영화</a>
+          <a href="#comment">후기</a>
         </div>
-      </section>
+      </nav>
       <!-- @TODO 영화 이미지 리스트 -->
-      <section class="movie-detail-images">
+      <section id="detail-title" class="movie-detail-images">
         <div class="detail-photo">
           <h3 class="detail-title">포토</h3>
           <span class="detail-counts"></span>
@@ -79,7 +79,7 @@
         </figure> -->
       </section>
       <!-- @TODO 영화 추천 -->
-      <section class="slide-position">
+      <section id="recommend-movies" class="slide-position">
         <h3 class="recommend-movies">추천영화</h3>
         <div class="movie-slide">
           <ul class="similar-movies-list"></ul>
@@ -122,7 +122,7 @@
       <!-- 댓글 폼 -->
       <div class="global-inner">
         <div class="tit-wrap">
-          <h3 class="guest-tit">후기</h3>
+          <h3 id="comment" class="guest-tit">후기</h3>
           <span class="badge-num">2</span>
         </div>
 

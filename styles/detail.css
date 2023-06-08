@@ -129,7 +129,7 @@ header img {
 .movie-detail-images {
   display: flex;
   flex-direction: column;
-  margin-top: 60rem;
+  padding-top: 80rem;
 }
 
 .detail-photo {

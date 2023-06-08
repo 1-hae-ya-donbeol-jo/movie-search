@@ -1,6 +1,7 @@
 import { getDetailMovie, getDetailMovieImages, getSimilarMovie } from "./apis/movie.js";
 import { Slider } from "./models/Slider.js";
 import { drawMovieList } from "./movie.js";
+import { addComment } from "./apis/comment.js";
 
 const searchParams = new URLSearchParams(location.search);
 const movieId = searchParams.get("movieId");
@@ -123,3 +124,23 @@ commentForm.addEventListener("submit", event => {
   `
   );
 });
+
+// let userList = [];
+
+// const saveComment = () => {
+// const userId = document.querySelector("#password").value;
+// const userName = document.querySelector("#name").value;
+// const userPassword = document.querySelector("#password").value;
+// const userComment = document.querySelector("#comment").value;
+
+// const userObjItem = {
+// name: userName,
+// password: userPassword,
+// comment: userComment,
+// id: userList.length + 1
+// };
+
+// userList.push(userObjItem);
+// localStorage.setItem(`${userId}`, JSON.stringify(userList));
+// console.log(userList);
+// };
