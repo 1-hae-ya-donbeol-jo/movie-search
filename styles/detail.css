@@ -18,13 +18,14 @@ header {
   padding: 0 2rem;
 }
 
-header figure {
+header img {
   cursor: pointer;
 }
 
 .movie-detail {
   display: flex;
   justify-content: center;
+  margin-top: 81rem;
 }
 
 .detail-movie-poster {
@@ -107,7 +108,7 @@ header figure {
 .movie-detail-menu {
   margin-top: 60rem;
   padding: 0rem 75rem;
-  border-bottom: 1px solid var(--color_black);
+  border-bottom: 1px solid var(--color_gray5);
   font-weight: 600;
   font-size: 14rem;
   line-height: 17rem;
@@ -128,16 +129,15 @@ header figure {
 .movie-detail-images {
   display: flex;
   flex-direction: column;
-  margin-top: 60rem;
+  padding-top: 80rem;
 }
 
 .detail-photo {
-  padding: 0rem 75rem;
+  border-bottom: 1px solid var(--color_gray1);
   font-weight: 500;
   font-size: 24rem;
   line-height: 29rem;
   color: var(--color_black);
-  border-bottom: 1px solid var(--color_black);
 }
 
 .detail-title {
@@ -159,6 +159,7 @@ header figure {
 
 .detail-image-slider {
   position: relative;
+  margin-top: 23rem;
 }
 
 .detail-image-display {
@@ -204,7 +205,6 @@ header figure {
   position: absolute;
   top: 50%;
   z-index: 10;
-
   width: 40px;
   height: 40px;
 
@@ -213,10 +213,8 @@ header figure {
   background-size: cover;
 
   border-radius: 20px;
-
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1), 0px 1px 18px rgba(0, 0, 0, 0.06),
     0px 6px 10px rgba(0, 0, 0, 0.08);
-
   cursor: pointer;
 }
 
@@ -228,6 +226,5 @@ header figure {
 
 .next-button {
   right: -20px;
-
   transform: translateY(-50%);
 }
