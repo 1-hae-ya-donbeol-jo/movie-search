@@ -81,23 +81,43 @@ renderSimilar();
 
 // renderDetailImages();
 
-// // localStorage 댓글
-// const setBtn = document.querySelector("#setForm");
-// let countComment = 0;
+// localStorage 댓글
+const setBtn = document.querySelector("#setForm");
+let commentList = [];
 
-// // localStorage POST 기능
-// setBtn.addEventListener("submit", event => {
-//   event.preventDefault();
-//   let nameValue = document.querySelector("#userName");
-//   let commentValue = document.querySelector("#userComment");
-//   localStorage.setItem(`userName${countComment}`, nameValue.value);
-//   localStorage.setItem(`userComment${countComment}`, commentValue.value);
-//   nameValue.value = "";
-//   commentValue.value = "";
-//   return (countComment += 1);
-// });
+// localStorage POST 기능
+setBtn.addEventListener("submit", event => {
+  event.preventDefault();
+  let nameValue = document.querySelector("#userName");
+  let commentValue = document.querySelector("#userComment");
+  let passwordValue = document.querySelector("#userPassword");
+
+  let userWrite = {
+    name: nameValue.value,
+    comment: commentValue.value,
+    password: passwordValue.value,
+    commentId: getArr.length + 1
+  };
+
+  commentList.push(userWrite);
+
+  let write = JSON.stringify(getArr);
+
+  localStorage.setItem(movieId, write);
+  nameValue.value = "";
+  commentValue.value = "";
+  passwordValue.value = "";
+});
+
+// JSON.parse(localStorage.getItem(key)) 값 불러오기
+// JSON.parse(localStorage.getItem(key)).push(넣을 데이터)
+// 제이슨 씌우기
 
 // // localStorage GET 기능 삭제와 연동되면 오류 발생
+const getComment = () => {
+  let getArr = JSON.parse(localStorage.getItem(movieId));
+};
+getComment();
 // const commentList = document.querySelector(".comment-list");
 // const getComment = () => {
 //   commentList.innerHTML = "";

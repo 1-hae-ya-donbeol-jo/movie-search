@@ -63,13 +63,13 @@
         </div>
         <!-- ****************** -->
         <div class="detail-image-slider">
-          <button class="prev-button">이전</button>
+          <button class="prev-button"></button>
 
           <div class="detail-image-display">
             <ul class="detail-image-list"></ul>
           </div>
 
-          <button class="next-button">다음</button>
+          <button class="next-button"></button>
         </div>
         <!-- ****************** -->
         <!-- <figure class="detail-images">
@@ -97,10 +97,24 @@
         <input type="text" id="userName" />
         <label for="userName">후기</label>
         <input type="text" id="userComment" />
+        <label for="userPassword">비밀번호</label>
+        <input type="text" id="userPassword" />
         <button>작성</button>
       </form>
     </section>
-    <ul class="comment-list"></ul>
+    <ul class="comment-list">
+      <li>
+        <form action="" id="commentNum${i}">
+          <label for="writeName">이름</label>
+          <data id="writeName">${name}</data>
+          <label for="writeComment">후기</label>
+          <data id="writeComment">${comment}</data>
+          <input id="writeComment" value="" style="display: none" />
+          <button id="editBtn">수정</button>
+          <button id="deleteBtn">삭제</button>
+        </form>
+      </li>
+    </ul>
 
     <!-- @TODO 덧글 작성 -->
     <section class="guest-section">
