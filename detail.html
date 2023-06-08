@@ -44,15 +44,33 @@
     </header>
     <!--header-->
 
-    <!-- @TODO 영화 상세 박스 -->
-    
-    <!-- @TODO 영화 추천 -->
     <div class="container">
+      <!-- @TODO 영화 상세 박스 -->
       <main class="movie-detail"></main>
-      <ul class="similar-movies-list grid"></ul>
+      <!-- @TODO 영화 상세 박스 메뉴 나열 -->
+      <section class="movie-detail-menu">
+        <div class="detail-menu-list">
+          <h3 class="menu-photo">포토</h3>
+          <h3>추천영화</h3>
+          <h3>후기</h3>
+        </div>
+      </section>
+      <!-- @TODO 영화 이미지 리스트 -->
+      <section class="movie-detail-images">
+        <div class="detail-photo">
+          <h3 class="detail-title">포토</h3>
+          <span class="detail-counts"></span>
+        </div>
+        <figure class="detail-images"></figure>
+      </section>
+      <!-- @TODO 영화 추천 -->
+      <section>
+        <div class="container">
+          <main class="movie-detail"></main>
+          <ul class="similar-movies-list grid"></ul>
+        </div>
+      </section>
     </div>
-
-
     <!-- @TODO 덧글 작성 -->
     <section class="guest-section">
       <!-- 댓글 폼 -->

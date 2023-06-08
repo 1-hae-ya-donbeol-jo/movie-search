@@ -37,3 +37,9 @@ export const getSimilarMovie = async movieId => {
 
   return response;
 };
+
+export const getDetailMovieImages = async movieId => {
+  const { backdrops: detailMovieImages } = await fetchMovie(`movie/${movieId}/images`);
+
+  return detailMovieImages;
+};
