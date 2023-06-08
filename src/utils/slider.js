@@ -1,7 +1,5 @@
 // id moveSlide class 명으로 변경
 const nextBtn = document.querySelectorAll("#moveSlide");
-console.log("1", nextBtn);
-console.log("2", Array.from(nextBtn));
 
 Array.from(nextBtn).forEach(btn => {
   let classValue = btn.previousElementSibling.firstElementChild.className;
