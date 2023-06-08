@@ -1,3 +1,4 @@
+import { Snail } from "./models/Snail.js";
 import { renderPopularMovie, renderSearchMovie } from "./movie.js";
 import { drawSortMovieList } from "./sort.js";
 
@@ -35,3 +36,6 @@ moreBtn.addEventListener("click", () => {
   nowList.style.height = "auto";
   moreBtn.style.display = "none";
 });
+
+const snail = new Snail();
+snail.add();

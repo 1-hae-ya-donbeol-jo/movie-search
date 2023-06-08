@@ -610,3 +610,14 @@ a:hover {
 
   transition: 0.3s ease-out;
 }
+
+.snail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  transition: 5000ms;
+
+  cursor: pointer;
+}
