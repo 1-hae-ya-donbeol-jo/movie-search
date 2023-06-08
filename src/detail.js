@@ -1,10 +1,13 @@
 import { getDetailMovie, getDetailMovieImages } from "./apis/movie.js";
+import { getSimilarMovie } from "./apis/movie.js";
+import { drawMovieList } from "./movie.js";
 
 const searchParams = new URLSearchParams(location.search);
 const movieId = searchParams.get("movieId");
 
 const renderDetail = async () => {
   const movieDetail = await getDetailMovie(movieId);
+  console.log(movieDetail);
 
   // genres, production_countries, production_companies 배열 정보 가져오는 데에 map 함수 사용
   const genres = movieDetail.genres.map(genre => `${genre.name}`).join(", ");
@@ -54,11 +57,15 @@ const renderDetail = async () => {
 
 renderDetail();
 
-// 햇님 로고 클릭 -> 메인 페이지로 이동
-const mainLogo = document.querySelector(".main-logo");
-mainLogo.addEventListener("click", event => {
-  window.location.href = "./index.html";
-});
+// 관련 영화 추천 [김채현]
+// similar api 가져오기
+export const renderSimilar = async () => {
+  const similarMovie = await getSimilarMovie(movieId);
+
+  drawMovieList(similarMovie, ".similar-movies-list");
+};
+
+renderSimilar();
 
 // 영화 상세 이미지 나열
 const renderDetailImages = async () => {
