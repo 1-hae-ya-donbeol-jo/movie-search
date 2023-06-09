@@ -1,7 +1,13 @@
-import { addComment } from "./apis/comment.js";
+import { addComment, getCommentList } from "./apis/comment.js";
 import { getDetailMovie, getDetailMovieImages, getSimilarMovie } from "./apis/movie.js";
 import { Slider } from "./models/Slider.js";
 import { drawMovieList } from "./movie.js";
+
+//comment profile img
+const randomNumber = () => {
+  var num = Math.floor(Math.random() * 4) + 1;
+  return num;
+};
 
 const searchParams = new URLSearchParams(location.search);
 const movieId = searchParams.get("movieId");
@@ -10,7 +16,6 @@ const renderDetail = async () => {
   const movieDetail = await getDetailMovie(movieId);
   // genres, production_countries, production_companies 배열 정보 가져오는 데에 map 함수 사용
   const genres = movieDetail.genres.map(genre => `${genre.name}`).join(", ");
-  console.log(genres);
   const productionCountries = movieDetail.production_countries
     .map(country => `${country.name}`)
     .join(", ");
@@ -115,6 +120,31 @@ gotoMainPage.addEventListener("click", () => {
   window.location.href = "/";
 });
 
+const renderComment = (commentId, userName, userComment) => {
+  const commentList = document.querySelector(".guest-comment-list");
+
+  commentList.insertAdjacentHTML(
+    "afterbegin",
+    `
+    <li class="card" id="${commentId}">
+      <img src="./assets/user_comment_profile${randomNumber()}.svg" />
+
+      <div class="user-comment-box">
+        <div>
+          <p class="user-title">${userName}</p>
+          <p class="user-comment">${userComment}</p>
+        </div>
+        
+        <div class="card-btn">
+          <button type="button" class="btn-update-comment">수정</button>
+          <button type="button" class="btn-delete-comment">삭제</button>
+        </div>
+      </div>
+    </li>
+  `
+  );
+};
+
 // localStorage 댓글
 const commentForm = document.querySelector("#setForm");
 
@@ -132,50 +162,26 @@ commentForm.addEventListener("submit", event => {
 
   addComment(movieId, data);
 
-  const commentList = document.querySelector(".comment-list");
-  commentList.insertAdjacentHTML(
-    "afterend",
-    `
-    <li>
-      <p>${data.userName}</p>
-      <p>${data.userComment}</p>
-    </li>
-  `
-  );
+  renderComment(data.commentId, data.userName, data.userComment);
+  setCommentCount();
 });
 
-// let userList = [];
+const setCommentCount = () => {
+  const commentCount = document.querySelector("#comment-count");
+  const commentList = document.querySelector(".guest-comment-list");
 
-// const saveComment = () => {
-// const userId = document.querySelector("#password").value;
-// const userName = document.querySelector("#name").value;
-// const userPassword = document.querySelector("#password").value;
-// const userComment = document.querySelector("#comment").value;
+  commentCount.innerHTML = commentList.childElementCount;
+};
 
-// const userObjItem = {
-// name: userName,
-// password: userPassword,
-// comment: userComment,
-// id: userList.length + 1
-// };
+const loadComment = () => {
+  const commentList = getCommentList(movieId);
 
-// userList.push(userObjItem);
-// localStorage.setItem(`${userId}`, JSON.stringify(userList));
-// console.log(userList);
-// };
+  commentList.forEach(({ id, userName, userComment }) => {
+    renderComment(id, userName, userComment);
+  });
 
-//<div class="detail-movie-info">
-// <div class="detail-movie-left">
-//   <p> 개봉일자: ${movieDetail.release_date}</p>
-//   <p> 장르: ${genres}</p>
-//   <p> 러닝타임: ${movieDetail.runtime}분</p>
-//   <p> 수익: ${revenue}달러</p>
-// </div>
+  setCommentCount();
+};
 
-// <div class="detail-movie-right">
-//   <p> 평점: ★ ${movieDetail.vote_average}점</p>
-//   <p> 투표 수: ${voteCount}개</p>
-//   <p> 국가: ${productionCountries}</p>
-//   <p> 제작사: ${productionCompanies}</p>
-// </div>
-// </div>
+loadComment();
+// 끝

@@ -10,3 +10,9 @@ export const addComment = (movieId, comment) => {
 
   localStorage.setItem("comments", JSON.stringify(parsedComments));
 };
+
+export const getCommentList = movieId => {
+  const commentList = JSON.parse(localStorage.getItem("comments") || "{}");
+
+  return commentList[movieId] || [];
+};

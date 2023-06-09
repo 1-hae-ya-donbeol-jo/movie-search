@@ -15,7 +15,7 @@
     <script src="./src/detail.js" type="module" defer></script>
 
     <!-- @TODO detail 제목 -->
-    <title>${title}</title>
+    <title>영화 상세 페이지</title>
   </head>
   <body>
     <header class="header">
@@ -83,45 +83,54 @@
 
       <!-- @TODO 덧글 작성 -->
       <section class="guest-section">
-        <!-- 댓글 폼 -->
-        <div class="tit-wrap">
-          <h3 id="comment" class="guest-tit">후기</h3>
-          <span class="badge-num">2</span>
+        <!-- 댓글 해더 -->
+        <div class="detail-photo">
+          <h3 id="comment" class="detail-title">후기</h3>
+          <span id="comment-count" class="detail-counts"></span>
         </div>
 
+        <!-- 댓글 작성 부분 -->
+        <form id="setForm">
+          <label for="userName"></label>
+          <input type="text" name="userName" id="userName" placeholder="홍길동" required />
+          <label for="userPassword"></label>
+          <input
+            type="text"
+            name="userPassword"
+            id="userPassword"
+            placeholder="비밀번호"
+            required
+          />
+          <label for="userComment"></label>
+          <input
+            type="text"
+            name="userComment"
+            id="userComment"
+            placeholder="한 줄 평을 남겨주세요!"
+            required
+          />
+          <button type="submit" class="btn btn-dark btn-global-kr">후기 남기기</button>
+        </form>
+
+        <!-- 댓글 GET -->
         <ul class="guest-comment-list">
-          <!-- 댓글 -->
+          <!-- 삭제 예정 -->
           <li class="card" id="${_id}">
             <img src="./assets/user_comment_profile2.svg" />
 
-            <div class="user-comment-wrap">
-              <div class="user-tit">
-                <p>
-                  김선익
-                  <span class="date">Apr 29. 2023</span>
-                </p>
-
-                <div class="card-btn">
-                  <button type="button" class="btn-update-comment">수정</button>
-                  <button type="button" class="btn-delete-comment">삭제</button>
-                </div>
+            <div class="user-comment-box">
+              <div>
+                <p class="user-title">김선익</p>
+                <p class="user-comment">영화 재밌어요 추천합니다</p>
               </div>
-              <p class="user-comment">영화 재밌어요 추천합니다</p>
+
+              <div class="card-btn">
+                <button type="button" class="btn-update-comment">수정</button>
+                <button type="button" class="btn-delete-comment">삭제</button>
+              </div>
             </div>
           </li>
-          <!-- 댓글 END -->
         </ul>
-
-        <div class="mypostcount">
-          <input type="text" class="form-control" id="name" placeholder="홍길동" />
-          <textarea class="form-control" placeholder="후기를 남겨주세요!" id="comment"></textarea>
-
-          <button onclick="save_comment()" type="button" class="btn btn-dark btn-global-kr">
-            후기 남기기
-          </button>
-        </div>
-
-        <div class="mycards" id="comment-list"></div>
         <!-- 댓글 폼 END -->
       </section>
     </div>
