@@ -3,18 +3,6 @@ import { getPopularMovieList, getSearchMovieList, getNowPlayingMovie } from "./a
 export const drawMovieList = (movieList, className) => {
   const movieListElement = document.querySelector(className);
 
-  // const upNode = movieListElement.parentNode.parentNode;
-  // const slideBtn = `
-  //   <figure class="move-slide">
-  //     <button value="prev">이전</button>
-  //     <button value="next">다음</button>
-  //   </figure>
-  // `;
-
-  // if (movieListElement.type == "slide") {
-  //   upNode.innerHTML += slideBtn;
-  // }
-
   movieListElement.innerHTML = movieList.reduce((newMovieList, movieItem) => {
     const { poster_path, title, vote_average, id } = movieItem;
 
