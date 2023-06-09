@@ -1,26 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-* {
-  font-family: "Inter";
-  font-style: normal;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  height: 200px;
-
-  padding: 0 2px;
-}
-
-header img {
-  cursor: pointer;
-}
-
 .movie-detail {
-  /* display: flex; */
   justify-content: center;
 
   margin-top: 81px;
@@ -41,8 +19,6 @@ header img {
   padding: 15px;
 
   margin: 0px 20px;
-
-  /* border-bottom: 1px solid var(--color_black); */
 
   font-size: 16px;
 }
@@ -234,4 +210,131 @@ header img {
   right: -20px;
 
   transform: translateY(-50%);
+}
+
+/* 후기 */
+.guest-section {
+  margin-top: 80px;
+}
+
+#setForm {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "userName userPassword"
+    "userComment userComment";
+  column-gap: 30px;
+  row-gap: 10px;
+
+  margin: 15px;
+}
+#setForm label {
+  display: none;
+}
+
+#setForm input {
+  width: 100%;
+
+  padding: 20px 25px;
+
+  outline: none;
+  border: 1px solid var(--color_white2);
+}
+
+#userName {
+  grid-area: "userName";
+}
+
+#userPassword {
+  grid-area: "userPassword";
+}
+
+#userComment {
+  grid-area: "userComment";
+}
+
+.guest-section .btn-global-kr {
+  padding: 12px 33px;
+
+  background-color: var(--color_black);
+
+  border-radius: 3px;
+
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color_white);
+}
+
+.guest-section .btn-global-kr:hover {
+  opacity: 0.7;
+
+  color: var(--color_white);
+
+  transition: 0.3s ease-out;
+}
+
+.guest-section button {
+  border-style: none;
+
+  cursor: pointer;
+}
+
+.guest-section button:hover {
+  cursor: pointer;
+}
+
+.guest-section .card {
+  display: flex;
+
+  width: 100%;
+
+  padding: 34px 25px;
+
+  border-bottom: 1px solid var(--color_white2);
+}
+
+.guest-section .card:first-child {
+  border-top: 1px solid var(--color_black);
+}
+
+.user-comment-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-left: 16px;
+}
+
+.user-title {
+  margin-bottom: 12px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+.guest-section .user-comment {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  color: var(--color_gray6);
+}
+
+.btn-update-comment,
+.btn-delete-comment {
+  padding: 6px 10px;
+  margin-right: 5px;
+
+  border-radius: 3px;
+
+  line-height: 1;
+}
+
+.btn-delete-comment {
+  background-color: var(--color_gray8);
+
+  color: var(--color_white);
 }

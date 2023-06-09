@@ -26,25 +26,29 @@
           <nav class="gnb">
             <ul class="gnb-inner">
               <li class="item">
-                <a href="#"><span>추천영화</span></a>
+                <a onclick="alert('준비중입니다')" href="#"><span>추천영화</span></a>
               </li>
               <li class="item">
-                <a href="#"><span>상영중영화</span></a>
+                <a onclick="alert('준비중입니다')" href="#"><span>상영중영화</span></a>
               </li>
             </ul>
           </nav>
         </div>
 
         <div class="header-util">
-          <a class="util-item"><img src="./assets/ico_lang.svg" /></a>
-          <a class="util-item"><img src="./assets/ico_user.svg" /></a>
-          <a class="util-item mobile"><img src="./assets/ico_hamburger.svg" /></a>
+          <a onclick="alert('준비중입니다')" class="util-item"
+            ><img src="./assets/ico_lang.svg"
+          /></a>
+          <a onclick="alert('준비중입니다')" class="util-item"
+            ><img src="./assets/ico_user.svg"
+          /></a>
         </div>
       </div>
     </header>
 
     <div class="movie-visual" style="background-image: url('/assets/background.png')"></div>
 
+    <!-- 인기영화 슬라이더 리스트 -->
     <section class="container slide-position">
       <div class="movie-slide up-position">
         <ul class="movie-list" type="slide"></ul>
@@ -57,6 +61,7 @@
     </section>
 
     <main class="now-movie container">
+      <!-- 검색 -->
       <div class="align-center">
         <form class="search-form">
           <input class="search-box" placeholder="movie" />
@@ -65,9 +70,11 @@
         </form>
       </div>
 
+      <!-- 현재 상영중 리스트 -->
       <div class="align-center sort-title">
         <h3 class="section-title">현재 상영 중</h3>
 
+        <!-- 정렬 버튼 -->
         <button name="sort-option" id="sortOpt">
           정렬
           <option id="day">개봉순</option>
@@ -93,7 +100,6 @@
             위 내용에 대한 저작권 및 법적 책임은 자료제공사 또는<br />
             글쓴이에 있으며 우리의 입장과 다를 수 있습니다.
           </p>
-
           <div class="copylight">© 2023 일해야돈벌조. All rights reserved</div>
         </div>
       </div>
